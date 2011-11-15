@@ -1,0 +1,1 @@
+<?php	Class Connection{		function __construct(){					}		function open(){			//connection bdd			mysql_connect("localhost","root","");			mysql_select_db("projetSEL");		}		function close(){			//mysql_close();		}	}?>
