@@ -1,7 +1,11 @@
 <?php 
+	include 'domaine/Utilisateur.class.php';
 	session_start();
+	$user=&$_SESSION['user'];
+	if (!is_object($user)) {
+		$user = new Utilisateur();
+	}
 	include 'front/Constante.class.php';
-	include 'manager/QueryAnnonce.class.php';
 	include 'Connection.class.php';
 	class Header{
 		function __construct()

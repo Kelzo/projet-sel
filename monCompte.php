@@ -4,7 +4,7 @@
 	include 'front/include/MenuP.class.php';
 	include 'front/include/MenuUser.class.php';
 	include 'front/include/Search.class.php';
-	include("front/include/MonCompte.class.php");
+	include("front/page/MonCompte.class.php");
 	include("front/include/Footer.class.php");
 	
 	new Header();

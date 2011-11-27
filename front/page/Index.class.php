@@ -2,9 +2,8 @@
 	include 'manager/QueryContenuLibre.class.php';
 	include 'manager/QueryUtilisateur.class.php';
 	include 'domaine/ContenuLibre.class.php';
-	include 'front/Constante.class.php';
-	include 'front/include/Agenda.class.php';
-	include 'front/include/Contact.class.php';
+	include 'front/page/Agenda.class.php';
+	include 'front/page/Contact.class.php';
 	
 	class Index{
 		function __construct(){
@@ -45,7 +44,7 @@
 			
 			echo("<br/><br/>");
 			
-			if(ISSET($_SESSION['pseudo']) && ISSET($_SESSION['password'])){
+			if(ISSET($_SESSION['user'])){
 				header("location:home.php");
 			}else{
 				if(ISSET($_POST['pseudo'])&& ISSET($_POST['password'])){
@@ -53,7 +52,7 @@
 					$qUitlisateur = new QueryUtilisateur();
 					$user =$qUitlisateur->getByPseudoAndPassword($_POST['pseudo'], $_POST['password']);
 					$i=0;
-					while (mysql_fetch_object($user)){
+					while($blop=mysql_fetch_object($user)){
 						$i++;	
 					}
 					if($i==0){
@@ -62,8 +61,7 @@
 						$this->mireDeLogin();
 					}else if($i==1){
 						//login reussi
-						$_SESSION['pseudo']=$_POST['pseudo'];
-						$_SESSION['password']=$_POST['password'];
+						$_SESSION['user']=$blop;
 						header("location:home.php");
 					}else{
 						//probleme technique
