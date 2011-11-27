@@ -7,6 +7,7 @@
 	
 	//penser a proteger les champs des caracteres speciaux
 	$typeAnnonce->label = mysql_escape_string($_POST['label']."");
+	$typeAnnonce->type = mysql_escape_string($_POST['type']."");
 	
 	$qTypeAnnonce=new QueryTypeAnnonce();
 	$qTypeAnnonce->insert($typeAnnonce);

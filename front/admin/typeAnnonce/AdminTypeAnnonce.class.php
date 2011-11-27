@@ -37,6 +37,7 @@
 			<br/><br/>
 				<form method="POST" action="typeAnnonce/creerTypeAnnonce.php">
 					label : <input name="label"/><br/>
+					type :  <input name="type"/><br/>
 					<input value="Creer" type="submit"/>		
 				</form>
 			<?php
