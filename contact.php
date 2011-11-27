@@ -4,15 +4,18 @@
 	include 'front/include/MenuP.class.php';
 	include 'front/include/MenuUser.class.php';
 	include 'front/include/Search.class.php';
-	include("front/page/Home.class.php");
+	include("front/include/Contact.class.php");
 	include("front/include/Footer.class.php");
-	//test commit
+	
+	include 'manager/QueryContenuLibre.class.php';
+	include 'front/Constante.class.php';
+	
 	new Header();
 	new Protect();
 	new MenuP();
 	new MenuUser();
 	new Search();
-	new Home();
+	new Contact('');
 	new Footer();	 		
 	
 ?>

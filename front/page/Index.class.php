@@ -25,7 +25,7 @@
 						$("#CONTENU_CONTACT").hide();
 						$("#CONTENU_HOME").hide();
 						$("#CONTENU_AGENDA").show(200);
-					}if(string=='AGENDA'){
+					}if(string=='CONTACT'){
 						$("#CONTENU_HOME").hide();
 						$("#CONTENU_AGENDA").hide();
 						$("#CONTENU_CONTACT").show(200);
