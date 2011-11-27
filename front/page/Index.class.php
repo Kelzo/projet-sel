@@ -51,8 +51,10 @@
 					$qUitlisateur = new QueryUtilisateur();
 					$user =$qUitlisateur->getByPseudoAndPassword($_POST['pseudo'], $_POST['password']);
 					$i=0;
+					$user;
 					while($blop=mysql_fetch_object($user)){
-						$i++;	
+						$i++;
+						$user=$blop;	
 					}
 					if($i==0){
 						//login echoue
@@ -60,7 +62,7 @@
 						$this->mireDeLogin();
 					}else if($i==1){
 						//login reussi
-						$_SESSION['id']=$blop->id;
+						$_SESSION['id']=$user->id;
 						header("location:home.php");
 					}else{
 						//probleme technique
