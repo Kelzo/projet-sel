@@ -31,6 +31,8 @@
 	<a href="index.php?pageAdmin=commentaire">Commentaire</a><br/>
 	<a href="index.php?pageAdmin=utilisateur">Utilisateur</a><br/>
 	<a href="index.php?pageAdmin=contenuLibre">Contenu Libre</a><br/>
+	<a href="index.php?pageAdmin=transactionDirect">Transaction Direct</a><br/>
+	<a href="index.php?pageAdmin=notification">Notification</a><br/>
 	<a href="index.php?pageAdmin=deco">Log out</a>
 	<?php
 		if(!isset($_GET['pageAdmin'])){
@@ -54,6 +56,12 @@
 			}else if($_GET['pageAdmin']=="contenuLibre"){
 				include 'contenuLibre/AdminContenuLibre.class.php';
 				new AdminContenuLibre();
+			}else if($_GET['pageAdmin']=="transactionDirect"){
+				include 'transactionDirect/AdminTransactionDirect.class.php';
+				new AdminTransactionDirect();
+			}else if($_GET['pageAdmin']=="notification"){
+				include 'notification/AdminNotification.class.php';
+				new AdminNotification();
 			}else if($_GET['pageAdmin']=="deco"){
 				session_unset();
 			}

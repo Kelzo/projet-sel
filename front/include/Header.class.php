@@ -4,6 +4,8 @@
 	include 'manager/QueryUtilisateur.class.php';
 	include 'front/Constante.class.php';
 	include 'Connection.class.php';
+	include 'front/Util.class.php';
+	
 	class Header{
 		function __construct()
 		{	
