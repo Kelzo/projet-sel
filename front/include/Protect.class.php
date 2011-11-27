@@ -2,7 +2,7 @@
 	Class Protect{
 		function __construct(){
 			//ajout de la securité
-			if(!ISSET($_SESSION['user'])){
+			if(!ISSET($_SESSION['id'])){
 				echo("return");
 				//on renvoie a l'index
 				header("location:index.php");

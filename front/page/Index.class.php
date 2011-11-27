@@ -44,7 +44,7 @@
 			
 			echo("<br/><br/>");
 			
-			if(ISSET($_SESSION['user'])){
+			if(ISSET($_SESSION['id'])){
 				header("location:home.php");
 			}else{
 				if(ISSET($_POST['pseudo'])&& ISSET($_POST['password'])){
@@ -61,7 +61,7 @@
 						$this->mireDeLogin();
 					}else if($i==1){
 						//login reussi
-						$_SESSION['user']=$blop;
+						$_SESSION['id']=$blop->id;
 						header("location:home.php");
 					}else{
 						//probleme technique

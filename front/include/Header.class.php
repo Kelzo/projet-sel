@@ -1,18 +1,12 @@
 <?php 
+	session_start();
 	include 'domaine/Utilisateur.class.php';
-	
+	include 'manager/QueryUtilisateur.class.php';
 	include 'front/Constante.class.php';
 	include 'Connection.class.php';
 	class Header{
 		function __construct()
 		{	
-			session_start();
-			static $user;
-			$user=&$_SESSION['user'];
-			
-			if (!is_object($user)) {
-				$user = new Utilisateur();
-			}
 			?>
 		<!DOCTYPE html>
 			<html>
