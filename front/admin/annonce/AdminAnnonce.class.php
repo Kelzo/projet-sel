@@ -62,19 +62,41 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="annonce/creerAnnonce.php">
-					Utilisateur : <?php $util->getListUtilisateur('');?><br/>
-					Type : <?php $util->getListTypeAnnonce('');?><br/>
-					Titre : <input name="titre"/><br/>
-					Description : <textarea name="desc"></textarea><br/>
-					Date : <input name="date"/><br/>
-					Adresse : <input name="adresse"/><br/>
-					Cp : <input name="cp"/><br/>
-					Ville : <input name="ville"/><br/>
-					Cout Poivre : <input name="coutPoivre"/><br/>
-					Id annonce parent<input name="idAnnonceParent"/><br/>
-					Annonce Valide<input name="annonceValide"/><br/>
-					Date Publication<input class="datePicker" name="datePublication"/><br/>
-					<input value="Creer" type="submit"/>		
+					<fieldset class="adminForm"><legend>Créer une annonce </legend>
+						<div class="left">
+							<label for="utilisateur">Utilisateur</label>
+							<?php $util->getListUtilisateur('');?>
+							<label for="type">Type</label>
+							<?php $util->getListTypeAnnonce('');?>
+							<label for="titre">Titre</label>
+							<input name="titre"/>
+							</div>
+						<div class="left"> 
+							<label for="description">Description</label>
+							<textarea name="description"></textarea>
+							<label for="date">Date</label>
+							<input name="date"/>
+							<label for="adresse">Adresse</label>
+							<input name="adresse"/>
+						</div>
+						<div class="left"> 
+							<label for="cp">Cp</label>
+							<input name="cp"/>
+							<label for="ville">Ville</label>
+							<input name="ville"/>
+							<label for="coutPoivre">Cout Poivre</label>
+							<input name="coutPoivre"/>
+						</div>
+						<div class="left"> 
+							<label for="idAnnonceParent"> Id Annonce Parent</label>
+							<input name="idAnnonceParent"/>
+							<label for="annonceValide"> Annonce Valide </label>
+							<input name="annonceValide"/>
+							<label for="datePublication" class="datePicker"> Id Annonce Parent</label>
+							<input class="datePicker" name="datePublication"/>
+						</div>
+						<a class="clear"></a><input value="Creer" type="submit"/></a>
+					</fieldset>		
 				</form>
 			<?php
 		}

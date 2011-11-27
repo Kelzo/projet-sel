@@ -25,7 +25,7 @@
 		</head>
 		<body>
 <div id="admin">
-	<a href="index.php?pageAdmin=annonce">Administration des annonces</a><br/>
+	<a href="index.php?pageAdmin=annonce">Annonces</a><br/>
 	<a href="index.php?pageAdmin=niveau">Niveau</a><br/>
 	<a href="index.php?pageAdmin=typeAnnonce">Type des annonces</a><br/>
 	<a href="index.php?pageAdmin=commentaire">Commentaire</a><br/>

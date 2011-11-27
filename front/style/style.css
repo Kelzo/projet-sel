@@ -27,3 +27,20 @@ color:#37535b;
 #admin a:hover{
 text-decoration:underline;
 }
+
+
+.adminForm label{
+margin-top:10px;
+display:block;
+color:#37535b;
+font-weight:bold;
+}
+
+.left{
+float:left;
+width:25%;
+}
+
+.clear{
+clear:both;
+}
