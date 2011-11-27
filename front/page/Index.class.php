@@ -1,6 +1,5 @@
 <?php
 	include 'manager/QueryContenuLibre.class.php';
-	include 'manager/QueryUtilisateur.class.php';
 	include 'domaine/ContenuLibre.class.php';
 	include 'front/page/Agenda.class.php';
 	include 'front/page/Contact.class.php';
