@@ -3,4 +3,6 @@
 	define("CONTENU_CONTACT","CONTENU_CONTACT");
 	define("CONTENU_AGENDA","CONTENU_AGENDA");
 	define("NOS_PARTENAIRES", "NOS_PARTENAIRES");	
+	
+	define("DATE_PATERN", "d-m-Y");
 ?>
