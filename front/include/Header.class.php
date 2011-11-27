@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	include 'manager/QueryAnnonce.class.php';
 	include 'Connection.class.php';
 	class Header{
@@ -14,10 +15,11 @@
 				
 				<link rel="shortcut icon" href="front/image/favicon.ico">				
 		   		<link rel="stylesheet" media="screen" type="text/css" title="Design" href="front/style/style.css" id="style"/>	
-
-<!--en cas de js				-->
-<!--				<script type="text/javascript" src="front/script/testFormulaire.js"></script>-->
-				<!--[if IE]><script src="front/script/ieElement.js"></script><![endif]-->
+				<link type="text/css" href="front/style/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
+				
+				<script type="text/javascript" src="front/script/jquery-1.6.2.min.js"></script>
+				<script type="text/javascript" src="front/script/jquery-ui-1.8.16.custom.min.js"></script>
+				
 				<title>Projet SEL</title>
 				
 			</head>
@@ -25,6 +27,8 @@
 			<body>
 			
 			<?php 
+			
+			
 		}		
 	}
 ?>

@@ -1,6 +1,8 @@
 <?php
-	Class annonce{
+	Class Annonce{
 		public $id;
+		public $utilisateurId;
+		public $typeAnnonceId;
 		public $titre;
 		public $desc;
 		public $date;
@@ -10,9 +12,12 @@
 		public $coutPoivre;
 		public $idAnnonceParent;
 		public $annonceValide;
+		public $datePublication;
 		
 		function __construct(){
 			$this->id='';
+			$this->utilisateurId='';
+			$this->type_annonce_id='';
 			$this->titre='';
 			$this->desc='';
 			$this->date='';
@@ -22,6 +27,7 @@
 			$this->coutPoivre='';
 			$this->idAnnonceParent='';
 			$this->annonceValide='';
+			$this->datePublication='';
 		}	
 	}
 ?>

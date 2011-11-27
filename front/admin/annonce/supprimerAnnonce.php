@@ -3,7 +3,7 @@
 	include '../../../manager/QueryAnnonce.class.php';
 	include '../../../Connection.class.php';
 	//on recupere les donnée du formulaire et on le chargfe dans l'objet
-	$annonce=new annonce();
+	$annonce=new Annonce();
 	$annonce->id= $_POST['id']+"";
 	
 	$qAnnonce=new QueryAnnonce();

@@ -1,0 +1,29 @@
+body{
+background:url("img/bg.jpg");
+width:1000px;
+margin:0 auto;
+font-family:Arial;
+}
+
+/* PARTIE ADMIN */
+
+#admin{
+}
+
+#admin input.submit{
+background-color:#37535b;
+color:white;
+padding:5px;
+}
+
+#admin a{
+font-weight:bold;
+padding:5px;
+display:block;
+text-decoration:none;
+color:#37535b;
+}
+
+#admin a:hover{
+text-decoration:underline;
+}
