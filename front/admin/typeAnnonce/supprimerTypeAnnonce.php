@@ -4,10 +4,10 @@
 	include '../../../Connection.class.php';
 	//on recupere les donnée du formulaire et on le chargfe dans l'objet
 	$typeAnnonce=new TypeAnnonce();
-	$typeAnnonce->id= $_POST['id']+"";
+	$typeAnnonce->id= $_POST['id'];
 	
-	$typeAnnonce=new QueryTypeAnnonce();
-	$typeAnnonce->delete($typeAnnonce);
+	$queryTypeAnnonce=new QueryTypeAnnonce();
+	$queryTypeAnnonce->delete($typeAnnonce);
 
 	header("location:../index.php?pageAdmin=typeAnnonce");
 ?>
