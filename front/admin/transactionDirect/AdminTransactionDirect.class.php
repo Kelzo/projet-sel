@@ -43,7 +43,7 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="transactionDirect/creerTransactionDirect.php">
-					Description : <input name="text"/><br/>
+					Description : <input name="desc"/><br/>
 					Recepteur : <?php $util->getListRecepteur('');?><br/>
 					Emetteur : <?php $util->getListEmetteur('');?><br/>
 					Prix : <input name="prix"/><br/>

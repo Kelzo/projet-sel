@@ -9,8 +9,8 @@
 		
 		function __construct(){
 			$this->id='';
-			$this->$emetteurId='';
-			$this->$recepteurId='';
+			$this->emetteurId='';
+			$this->recepteurId='';
 			$this->date='';
 			$this->desc='';
 			$this->etat='';
