@@ -10,7 +10,7 @@
 			<title>Projet SEL - Administration</title>
 					
 			<link rel="shortcut icon" href="../style/favicon.ico" />
-			<link rel="stylesheet" media="screen" type="text/css" title="Design" href="front/style/style.css" id="style"/>
+			<link rel="stylesheet" media="screen" type="text/css" title="Design" href="../style/style.css" id="style"/>
 			
 <!--			Ajour des script jquery-->
 		
