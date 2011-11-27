@@ -10,7 +10,8 @@
 	$notification->desc = mysql_escape_string($_POST['desc']."");
 	$notification->recepteurId = mysql_escape_string($_POST['recepteurId']."");
 	$notification->emetteurId = mysql_escape_string($_POST['emetteurId']."");
-	$notification->prix = mysql_escape_string($_POST['prix']."");
+	$notification->etat = mysql_escape_string($_POST['etat']."");
+	$notification->date = mysql_escape_string($_POST['date']."");
 	
 	$qNotification=new QueryNotification();
 	$qNotification->update($notification);

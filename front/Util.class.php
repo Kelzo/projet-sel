@@ -126,7 +126,7 @@
 				<option value="<?php echo CONTENU_HOME?>">Page Home</option>
 				<option value="<?php echo CONTENU_CONTACT?>">Contact</option>
 				<option value="<?php echo CONTENU_AGENDA?>">Agenda</option>
-				<option value="<?php echo NOS_PARTENAIRE?>">Nos Partenaires</option>
+				<option value="<?php echo NOS_PARTENAIRES?>">Nos Partenaires</option>
 			</select>
 			<?php 
 		}

@@ -1,7 +1,6 @@
 <?php
 	include("../../manager/QueryTransactionDirect.class.php");
 	include("../../manager/QueryUtilisateur.class.php");
-	include("../../manager/QueryAnnonce.class.php");
 	include ("AuthClassMaster.class.php");
 	include ("../Util.class.php");
 
@@ -44,7 +43,7 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="transactionDirect/creerTransactionDirect.php">
-					Desc : <input name="text"/><br/>
+					Description : <input name="text"/><br/>
 					Recepteur : <?php $util->getListRecepteur('');?><br/>
 					Emetteur : <?php $util->getListEmetteur('');?><br/>
 					Prix : <input name="prix"/><br/>

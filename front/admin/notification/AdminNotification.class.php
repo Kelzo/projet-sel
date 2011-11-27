@@ -1,7 +1,6 @@
 <?php
 	include("../../manager/QueryNotification.class.php");
 	include("../../manager/QueryUtilisateur.class.php");
-	include("../../manager/QueryAnnonce.class.php");
 	include ("AuthClassMaster.class.php");
 	include ("../Util.class.php");
 
@@ -46,8 +45,8 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="notification/creerNotification.php">
-					Desc : <input name="text"/><br/>
-					Prix : <input name="etat"/><br/>
+					Description : <input name="text"/><br/>
+					Etat : <input name="etat"/><br/>
 					Date : <input name="date"/><br/>
 					Recepteur : <?php $util->getListRecepteur('');?><br/>
 					Emetteur : <?php $util->getListEmetteur('');?><br/>
