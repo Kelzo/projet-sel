@@ -8,7 +8,6 @@
 	include("front/include/Footer.class.php");
 	
 	include 'manager/QueryContenuLibre.class.php';
-	include 'front/Constante.class.php';
 	
 	new Header();
 	new Protect();

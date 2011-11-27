@@ -4,7 +4,7 @@
 	include 'front/include/MenuP.class.php';
 	include 'front/include/MenuUser.class.php';
 	include 'front/include/Search.class.php';
-	include("front/include/Contact.class.php");
+	include("front/include/NosPartenaires.class.php");
 	include("front/include/Footer.class.php");
 	
 	include 'manager/QueryContenuLibre.class.php';
@@ -14,7 +14,7 @@
 	new MenuP();
 	new MenuUser();
 	new Search();
-	new Contact('');
+	new NosPartenaires();
 	new Footer();	 		
 	
 ?>

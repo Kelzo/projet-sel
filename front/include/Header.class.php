@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	include 'front/Constante.class.php';
 	include 'manager/QueryAnnonce.class.php';
 	include 'Connection.class.php';
 	class Header{
