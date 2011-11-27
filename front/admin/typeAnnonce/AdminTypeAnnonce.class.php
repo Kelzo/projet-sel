@@ -14,7 +14,8 @@
 				<table>
 					<tr>
 						<td>Id</td>
-						<td>label</td>
+						<td>Label</td>
+						<td>Type</td>
 					</tr>
 			<?php 
 			while($blop=mysql_fetch_object($resultat)){
@@ -22,6 +23,7 @@
 					<tr><form method="POST" action="typeAnnonce/editerTypeAnnonce.php">
 						<td><input name="id" readonly="true" value="<?php echo $blop->id; ?>"/></td>
 						<td><input name="label" value="<?php echo $blop->label; ?>"/></td>
+						<td><input name="type" value="<?php echo $blop->type; ?>"/></td>
 						<td><input value="E" type="submit"/></td>				
 					</form>
 					<form method="POST" action="typeAnnonce/supprimerTypeAnnonce.php">
