@@ -60,9 +60,41 @@
 				<option value="-1">Choisir un utilisateur ...</option>
 				<?php while($blip = mysql_fetch_object($resultatUser)){
 					if($blip->id==$elementSelected){
-					?><option selected="selected" value="<?php echo $blip->id;?>"><?php echo $blip->nom; ?></option><?php 
+					?><option selected="selected" value="<?php echo $blip->id;?>"><?php echo $blip->pseudo; ?></option><?php 
 					}else{
-					?><option value="<?php echo $blip->id;?>"><?php echo $blip->nom; ?></option><?php 
+					?><option value="<?php echo $blip->id;?>"><?php echo $blip->pseudo; ?></option><?php 
+					}
+				}?>
+			</select>
+			<?php 
+		}
+		function getListEmetteur($elementSelected){
+			$qUtilisateur = new QueryUtilisateur();
+			$resultatUser = $qUtilisateur->selectAll();
+			?>
+			<select name="emetteurId">
+				<option value="-1">Choisir un emetteur ...</option>
+				<?php while($blip = mysql_fetch_object($resultatUser)){
+					if($blip->id==$elementSelected){
+					?><option selected="selected" value="<?php echo $blip->id;?>"><?php echo $blip->pseudo; ?></option><?php 
+					}else{
+					?><option value="<?php echo $blip->id;?>"><?php echo $blip->pseudo; ?></option><?php 
+					}
+				}?>
+			</select>
+			<?php 
+		}
+		function getListRecepteur($elementSelected){
+			$qUtilisateur = new QueryUtilisateur();
+			$resultatUser = $qUtilisateur->selectAll();
+			?>
+			<select name="recepteurId">
+				<option value="-1">Choisir un recepteur ...</option>
+				<?php while($blip = mysql_fetch_object($resultatUser)){
+					if($blip->id==$elementSelected){
+					?><option selected="selected" value="<?php echo $blip->id;?>"><?php echo $blip->pseudo; ?></option><?php 
+					}else{
+					?><option value="<?php echo $blip->id;?>"><?php echo $blip->pseudo; ?></option><?php 
 					}
 				}?>
 			</select>
