@@ -1,0 +1,5 @@
+<?php
+	define("CONTENU_HOME","CONTENU_HOME");
+	define("CONTENU_CONTACT","CONTENU_CONTACT");
+	define("CONTENU_AGENDA","CONTENU_AGENDA");
+?>
