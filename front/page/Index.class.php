@@ -3,6 +3,8 @@
 	include 'manager/QueryUtilisateur.class.php';
 	include 'domaine/ContenuLibre.class.php';
 	include 'front/Constante.class.php';
+	include 'front/include/Agenda.class.php';
+	include 'front/include/Contact.class.php';
 	
 	class Index{
 		function __construct(){
@@ -38,15 +40,8 @@
 				echo "<div id=".CONTENU_HOME.">".$blop->texte."</div>"; 
 			}
 			
-			$contact = $qContenuLibre->getByIdFonctionnel(CONTENU_CONTACT);
-			while ($blop=mysql_fetch_object($contact)){
-				echo "<div style='display:none;' id=".CONTENU_CONTACT.">".$blop->texte."</div>"; 
-			}
-			
-			$agenda = $qContenuLibre->getByIdFonctionnel(CONTENU_AGENDA);
-			while ($blop=mysql_fetch_object($agenda)){
-				echo "<div style='display:none;' id=".CONTENU_AGENDA.">".$blop->texte."</div>"; 
-			}
+			new Contact('hidden');
+			new Agenda('hidden');
 			
 			echo("<br/><br/>");
 			
