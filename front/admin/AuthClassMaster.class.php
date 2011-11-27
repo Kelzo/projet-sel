@@ -15,8 +15,8 @@
 				?><p>Zone d'administration veuillez vous identifier<br/>
 				<table>
 				<form action="#" method="POST">
-					<tr><td>Login </td><td><input name="login" type="text"/></td></tr>
-					<tr><td>MDP </td><td><input name="mdp" type="password"></td></tr>
+					<tr><td>Login : </td><td><input name="login" type="text"/></td></tr>
+					<tr><td>MDP : </td><td><input name="mdp" type="password"></td></tr>
 					<br/><input type="submit" value="Confirmer"/>
 					</p>
 				</form>
