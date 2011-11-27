@@ -63,6 +63,9 @@
 					}else if($i==1){
 						//login reussi
 						$_SESSION['id']=$user->id;
+						//on met a jour la date de derniere connection
+						$user->dateDerniereConnection=date('Y-m-d', time());
+						$qUitlisateur->update($user);
 						header("location:home.php");
 					}else{
 						//probleme technique

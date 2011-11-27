@@ -28,7 +28,7 @@
 				$qNotification = new QueryNotification();
 				$qNotification->insert($notification);
 			}
-			?><form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+			?><form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
 					Vous vendez : <br/>
 					<textarea name="desc"></textarea><br/>
 					A <br/>
