@@ -44,10 +44,10 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="commentaire/creerCommentaire.php">
-					<fieldset class="adminForm"><legend>Créer une annonce </legend>
+					<fieldset class="adminForm"><legend>Créer un commentaire </legend>
 						<div class="left">
 							<label for="text">Texte</label>
-							<input name="text"/><br/>
+							<input name="texte"/><br/>
 							<label for="datePublication">Date</label>
 							<input name="datePublication"/><br/>
 							<label for="annonceId">Annonce</label>

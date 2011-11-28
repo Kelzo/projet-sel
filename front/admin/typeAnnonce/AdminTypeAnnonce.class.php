@@ -38,9 +38,16 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="typeAnnonce/creerTypeAnnonce.php">
-					label : <input name="label"/><br/>
-					type :  <input name="type"/><br/>
-					<input value="Creer" type="submit"/>		
+					<fieldset class="adminForm"><legend>Créer un Type d'Annonce </legend>
+						<div class="left">
+							<label for="label">Label</label>
+							<input name="label"/>
+							<label for="label">Type</label>
+							<input name="type"/>
+						</div>
+						<a class="clear"></a><input value="Creer" type="submit"/></a>
+					</fieldset>
+						
 				</form>
 			<?php
 		}

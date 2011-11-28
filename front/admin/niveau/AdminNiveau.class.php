@@ -36,7 +36,12 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="niveau/creerNiveau.php">
-					label : <input name="label"/><br/>
+					<fieldset class="adminForm"><legend>Créer un niveau </legend>
+							<div class="left">
+								<label for="label">Label</label>
+								<input name="label"/><br/>
+							</div>
+					</fieldset>
 					<input value="Creer" type="submit"/>		
 				</form>
 			<?php

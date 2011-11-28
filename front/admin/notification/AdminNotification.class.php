@@ -28,7 +28,7 @@
 						<td><input name="id" readonly="true" value="<?php echo $blop->id; ?>"/></td>
 						<td><input name="etat" value="<?php echo $blop->desc; ?>"/></td>
 						<td><input name="desc" value="<?php echo $blop->prix; ?>"/></td>
-						<td><input name="date" value="<?php echo $blop->prix; ?>"/></td>
+						<td><input name="date" value="<?php echo $blop->date; ?>"/></td>
 						<td><?php $util->getListRecepteur($blop->recepteurId);?></td>				
 						<td><?php $util->getListEmetteur($blop->emetteurId);?></td>
 						<td><input value="E" type="submit"/></td>				
@@ -45,12 +45,22 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="notification/creerNotification.php">
-					Description : <input name="text"/><br/>
-					Etat : <input name="etat"/><br/>
-					Date : <input name="date"/><br/>
-					Recepteur : <?php $util->getListRecepteur('');?><br/>
-					Emetteur : <?php $util->getListEmetteur('');?><br/>
-					<input value="Creer" type="submit"/>		
+					<fieldset class="adminForm"><legend>Créer une annonce </legend>
+						<div class="left">
+							<label for="desc">Description</label>
+							<input name="desc"/>
+							<label for="">Etat</label>
+							<input name="etat"/>
+							<label for="">Date</label>
+							<input name="date"/>
+							<label for="recepteurId">Recepteur</label>
+							<?php $util->getListRecepteur('');?>
+							<label for="emetteurId">Emetteur</label>
+							<?php $util->getListEmetteur('');?>
+						</div>
+						<a class="clear"></a><input value="Creer" type="submit"/></a>
+					</fieldset>
+							
 				</form>
 			<?php
 		}
