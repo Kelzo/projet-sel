@@ -44,10 +44,18 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="commentaire/creerCommentaire.php">
-					Texte : <input name="text"/><br/>
-					Date : <input name="datePublication"/><br/>
-					Annonce : <?php $util->getListAnnonce(''); ?><br/>
-					Utilisateur : <?php $util->getListUtilisateur('');?><br/>
+					<fieldset class="adminForm"><legend>Créer une annonce </legend>
+						<div class="left">
+							<label for="text">Texte</label>
+							<input name="text"/><br/>
+							<label for="datePublication">Date</label>
+							<input name="datePublication"/><br/>
+							<label for="annonceId">Annonce</label>
+							<?php $util->getListAnnonce(''); ?><br/>
+							<label for="utilisateurId">Utilisateur</label>
+							<?php $util->getListUtilisateur('');?><br/>					
+						</div>
+					</fieldset>
 					<input value="Creer" type="submit"/>		
 				</form>
 			<?php
