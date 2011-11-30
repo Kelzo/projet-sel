@@ -43,11 +43,19 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="transactionDirect/creerTransactionDirect.php">
-					Description : <input name="desc"/><br/>
-					Recepteur : <?php $util->getListRecepteur('');?><br/>
-					Emetteur : <?php $util->getListEmetteur('');?><br/>
-					Prix : <input name="prix"/><br/>
-					<input value="Creer" type="submit"/>		
+					<fieldset class="adminForm"><legend>Créer une Transaction Directe </legend>
+						<div class="left">
+							<label for="description">Description</label>
+							<input name="desc"/>
+							<label for="recepteurId">Recepteur</label>
+							<?php $util->getListRecepteur('');?>
+							<label for="emetteurId">Emetteur</label>
+							<?php $util->getListEmetteur('');?>
+							<label for="emetteurId">Prix</label>
+							<input name="prix"/>
+						</div>
+					</fieldset>
+					<a class="clear"></a><input value="Creer" type="submit"/></a>		
 				</form>
 			<?php
 		}

@@ -65,21 +65,47 @@
 			</table>
 			<br/><br/>
 				<form method="POST" action="utilisateur/creerUtilisateur.php">
-					Nom : <input name="nom"/><br/>
-					Niveau : <?php $util->getListNiveau('');?><br/>
-					Prenom : <input name="prenom"/><br/>
-					Pseudo : <input name="pseudo"/><br/>
-					Password : <input name="password"/><br/>
-					Email : <input name="email"/><br/>
-					Adresse : <input name="adresse"/><br/>
-					Cp : <input name="cp"/><br/>
-					Ville : <input name="ville"/><br/>
-					Poivre : <input name="poivre"/><br/>
-					Telephone Fixe<input name="telephoneFixe"/><br/>
-					Telephone Portable<input name="telephonePortable"/><br/>
-					Date Derniere Connection<input name="dateDerniereConnection"/><br/>
-					Photo<input name="photo"/><br/>
-					<input value="Creer" type="submit"/>		
+					<fieldset class="adminForm"><legend>Créer un Utilisateur </legend>
+							<div class="left">
+								<label for="nom">Nom</label>
+								<input name="nom"/>
+								<label for="niveau">Niveau</label>
+								<?php $util->getListNiveau('');?>
+								<label for="prenom">Prenom</label>
+								<input name="prenom"/>
+								<label for="pseudo">Pseudo</label>
+								<input name="pseudo"/>
+								<label for="password">Password</label>
+								<input name="password"/>
+							</div>
+							<div class="left">
+								<label for="email">Email</label>
+								<input name="email"/>
+								<label for="adresse">Adresse</label>
+								<input name="adresse"/>
+								<label for="cp">Code Postal</label>
+								<input name="cp"/>
+								<label for="ville">Ville</label>
+								<input name="ville"/>
+							</div>
+							<div class="left">
+								<label for="poivre">Poivre</label>
+								<input name="poivre"/>
+								<label for="telephoneFixe">Telephone Fixe</label>
+								<input name="telephoneFixe"/>
+								<label for="telephonePortable">Telephone Portable</label>
+								<input name="telephonePortable"/>
+							</div>
+							<div class="left">
+								<label for="dateDerniereConnection">Date Derniere Connection</label>
+								<input name="dateDerniereConnection"/>
+								<label for="photo">Photo</label>
+								<input name="photo"/>
+									
+							</div>
+							<a class="clear"></a><input value="Creer" type="submit"/></a>
+						</fieldset>	
+						
 				</form>
 			<?php
 		}

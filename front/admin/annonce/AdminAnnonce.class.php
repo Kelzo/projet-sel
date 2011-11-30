@@ -64,9 +64,9 @@
 				<form method="POST" action="annonce/creerAnnonce.php">
 					<fieldset class="adminForm"><legend>Créer une annonce </legend>
 						<div class="left">
-							<label for="utilisateur">Utilisateur</label>
+							<label for="utilisateurId">Utilisateur</label>
 							<?php $util->getListUtilisateur('');?>
-							<label for="type">Type</label>
+							<label for="typeAnnonceId">Type</label>
 							<?php $util->getListTypeAnnonce('');?>
 							<label for="titre">Titre</label>
 							<input name="titre"/>
