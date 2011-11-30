@@ -26,7 +26,12 @@
 				$repNotification->type="TRANSACTION_DIRECT";
 				$qNotification->insert($repNotification);
 				
-			} else if(ISSET($_POST['refuser'])){
+				//on valide la transaction
+				$vendeur = $qUser->getById($repNotification->recepteurId);
+				$acheteur = $qUser->getById($repNotification->emetteurId);
+				
+				
+			}else if(ISSET($_POST['refuser'])){
 				//la notification direct a été refusé 
 				//on recupere la notification
 				$notification = $qNotification->getById($_POST['id']);

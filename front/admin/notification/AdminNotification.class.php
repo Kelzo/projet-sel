@@ -1,6 +1,8 @@
 <?php
 	include("../../manager/QueryNotification.class.php");
 	include("../../manager/QueryUtilisateur.class.php");
+	include("../../manager/QueryAnnonce.class.php");
+	include("../../manager/QueryTransactionDirect.class.php");
 	include ("AuthClassMaster.class.php");
 	include ("../Util.class.php");
 
@@ -21,6 +23,8 @@
 						<td>Date</td>
 						<td>Recepteur</td>
 						<td>Emetteur</td>
+						<td>Annonce</td>
+						<td>Transaction Direct</td>
 					</tr>
 			<?php 
 			while($blop=mysql_fetch_object($resultat)){
@@ -28,11 +32,13 @@
 					<tr><form method="POST" action="notification/editerNotification.php">
 						<td><input name="id" readonly="true" value="<?php echo $blop->id; ?>"/></td>
 						<td><input name="type" value="<?php echo $blop->type; ?>"/></td>
-						<td><input name="etat" value="<?php echo $blop->desc; ?>"/></td>
-						<td><input name="desc" value="<?php echo $blop->prix; ?>"/></td>
+						<td><input name="etat" value="<?php echo $blop->etat; ?>"/></td>
+						<td><input name="desc" value="<?php echo $blop->desc; ?>"/></td>
 						<td><input name="date" value="<?php echo $blop->date; ?>"/></td>
 						<td><?php $util->getListRecepteur($blop->recepteurId);?></td>				
 						<td><?php $util->getListEmetteur($blop->emetteurId);?></td>
+						<td><?php $util->getListAnnonce($blop->annonceId);?></td>
+						<td><?php $util->getListTransactionDirect($blop->transactionDirectId);?></td>
 						<td><input value="E" type="submit"/></td>				
 					</form>
 					<form method="POST" action="notification/supprimerNotification.php">
@@ -61,6 +67,10 @@
 							<?php $util->getListRecepteur('');?>
 							<label for="emetteurId">Emetteur</label>
 							<?php $util->getListEmetteur('');?>
+							<label for="annonceId">Annonce</label>
+							<?php $util->getListAnnonce('');?>
+							<label for="transactionDirectId">Transaction Direct</label>
+							<?php $util->getListTransactionDirect('');?>
 						</div>
 						<a class="clear"></a><input value="Creer" type="submit"/></a>
 					</fieldset>

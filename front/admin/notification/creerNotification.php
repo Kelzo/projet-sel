@@ -12,7 +12,7 @@
 	$notification->emetteurId = mysql_escape_string($_POST['emetteurId']."");
 	$notification->etat = mysql_escape_string($_POST['etat']."");
 	$notification->date = mysql_escape_string($_POST['date']."");
-	
+	$notification->annonceId = mysql_escape_string($_POST['annonceId']."");
 	$qNotification=new QueryNotification();
 	$qNotification->insert($notification);
 

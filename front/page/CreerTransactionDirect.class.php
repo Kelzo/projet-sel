@@ -26,6 +26,7 @@
 				$notification->etat="EN_ATTENTE";
 				$notification->emetteurId=$_SESSION['id'];
 				$notification->recepteurId=$_POST['recepteurId'];
+				$notification->transactionDirectId = 
 				$qNotification = new QueryNotification();
 				$qNotification->insert($notification);
 			}

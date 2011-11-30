@@ -135,6 +135,23 @@
 			<?php 
 		}
 		
+		function getListTransactionDirect($elementSelected){
+			$qTransactionDirect = new QueryTransactionDirect();
+			$resultatTransaction = $qTransactionDirect->selectAll();
+			?>
+			<select name="transactionDirectId">
+				<option value="-1">Choisir une transaciton direct ...</option>
+				<?php while($blip = mysql_fetch_object($resultatTransaction)){
+					if($blip->id==$elementSelected){
+					?><option selected="selected" value="<?php echo $blip->id;?>"><?php echo $blip->desc; ?></option><?php 
+					}else{
+					?><option value="<?php echo $blip->id;?>"><?php echo $blip->desc; ?></option><?php 
+					}
+				}?>
+			</select>
+			<?php 
+		}
+		
 		function getListIdFContenu($elementSelected){
 			?>
 			<select name="idFonctionnel">
