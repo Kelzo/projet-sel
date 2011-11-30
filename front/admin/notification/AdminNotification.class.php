@@ -15,6 +15,7 @@
 				<table>
 					<tr>
 						<td>Id</td>
+						<td>Type</td>
 						<td>Etat</td>
 						<td>Description</td>
 						<td>Date</td>
@@ -26,6 +27,7 @@
 				?>
 					<tr><form method="POST" action="notification/editerNotification.php">
 						<td><input name="id" readonly="true" value="<?php echo $blop->id; ?>"/></td>
+						<td><input name="type" value="<?php echo $blop->type; ?>"/></td>
 						<td><input name="etat" value="<?php echo $blop->desc; ?>"/></td>
 						<td><input name="desc" value="<?php echo $blop->prix; ?>"/></td>
 						<td><input name="date" value="<?php echo $blop->date; ?>"/></td>
@@ -49,6 +51,8 @@
 						<div class="left">
 							<label for="desc">Description</label>
 							<input name="desc"/>
+							<label for="">Type</label>
+							<input name="type"/>
 							<label for="">Etat</label>
 							<input name="etat"/>
 							<label for="">Date</label>
