@@ -45,7 +45,7 @@
 						<td><input name="cp" value="<?php echo $blop->cp; ?>"/></td>
 						<td><input name="ville" value="<?php echo $blop->ville; ?>"/></td>
 						<td><input name="coutPoivre" value="<?php echo $blop->coutPoivre; ?>"/></td>
-						<td><input name="idAnnonceParent" value="<?php echo $blop->idAnnonceParent; ?>"/></td>
+						<td><?php $util->getListAnnonceParent($blop->idAnnonceParent);?></td>
 						<td><input name="annonceValide" value="<?php echo $blop->annonceValide; ?>"/></td>
 						<td><input name="datePublication" value="<?php echo $blop->datePublication; ?>"/></td>
 						<td><input value="E" type="submit"/></td>				
@@ -89,7 +89,7 @@
 						</div>
 						<div class="left"> 
 							<label for="idAnnonceParent"> Id Annonce Parent</label>
-							<input name="idAnnonceParent"/>
+							<?php $util->getListAnnonceParent('');?>
 							<label for="annonceValide"> Annonce Valide </label>
 							<input name="annonceValide"/>
 							<label for="datePublication" class="datePicker"> Id Annonce Parent</label>

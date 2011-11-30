@@ -118,6 +118,23 @@
 			<?php 
 		}
 		
+		function getListAnnonceParent($elementSelected){
+			$qAnnonce = new QueryAnnonce();
+			$resultatAnnonce = $qAnnonce->selectAll();
+			?>
+			<select name="idAnnonceParent">
+				<option value="-1">Choisir une annonce ...</option>
+				<?php while($blip = mysql_fetch_object($resultatAnnonce)){
+					if($blip->id==$elementSelected){
+					?><option selected="selected" value="<?php echo $blip->id;?>"><?php echo $blip->titre; ?></option><?php 
+					}else{
+					?><option value="<?php echo $blip->id;?>"><?php echo $blip->titre; ?></option><?php 
+					}
+				}?>
+			</select>
+			<?php 
+		}
+		
 		function getListIdFContenu($elementSelected){
 			?>
 			<select name="idFonctionnel">

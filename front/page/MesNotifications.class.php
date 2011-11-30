@@ -21,7 +21,7 @@
 				$repNotification->date=date('Y-m-d',time());
 				$repNotification->emetteurId=$id;
 				$repNotification->recepteurId=$notification->emetteurId;
-				$repNotification->desc="Demande accepté";
+				$repNotification->desc="Demande acceptée";
 				$repNotification->etat="REPONDU";
 				$repNotification->type="TRANSACTION_DIRECT";
 				$qNotification->insert($repNotification);
@@ -31,14 +31,14 @@
 				//on recupere la notification
 				$notification = $qNotification->getById($_POST['id']);
 				$notification->desc+="<br/>Demande refusée<br/>";
-				$notification->etat=="REPONDU";
+				$notification->etat="REPONDU";
 				$qNotification->update($notification);
 				//envoi de la reponse
 				$repNotification = new Notification();
 				$repNotification->date=date('Y-m-d',time());
 				$repNotification->emetteurId=$id;
 				$repNotification->recepteurId=$notification->emetteurId;
-				$repNotification->desc="Demande accepté";
+				$repNotification->desc="Demande refusée";
 				$repNotification->etat="REPONDU";
 				$repNotification->type="TRANSACTION_DIRECT";
 				$qNotification->insert($repNotification);
