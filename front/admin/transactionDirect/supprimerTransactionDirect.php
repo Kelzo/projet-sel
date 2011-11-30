@@ -3,11 +3,8 @@
 	include '../../../manager/QueryTransactionDirect.class.php';
 	include '../../../Connection.class.php';
 	//on recupere les donnée du formulaire et on le chargfe dans l'objet
-	$transactionDirect=new TransactionDirect();
-	$transactionDirect->id= $_POST['id']+"";
-	
 	$qTransactionDirect=new QueryTransactionDirect();
-	$qTransactionDirect->delete($transactionDirect);
+	$qTransactionDirect->delete($_POST['id']);
 
 	header("location:../index.php?pageAdmin=transactionDirect");
 ?>

@@ -22,7 +22,8 @@
 				$notification = new Notification();
 				$notification->date=date('Y-m-d', time());
 				$notification->desc="Vous avez reçu une demande de transaction direct de la part de ".$transactionDirect->emetteurId." concernant ".$transactionDirect->desc;
-				$notification->etat="?";
+				$notification->type=TRANSACTION_DIRECT;
+				$notification->etat="EN_ATTENTE";
 				$notification->emetteurId=$_SESSION['id'];
 				$notification->recepteurId=$_POST['recepteurId'];
 				$qNotification = new QueryNotification();

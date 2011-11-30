@@ -5,4 +5,6 @@
 	define("NOS_PARTENAIRES", "NOS_PARTENAIRES");	
 	
 	define("DATE_PATERN", "d-m-Y");
+	
+	define("TRANSACTION_DIRECT","TRANSACTION_DIRECT");
 ?>

@@ -26,8 +26,8 @@
 					<input name="id" type="hidden" value="<?php echo $user->id; ?>"/>
 					Id : <?php echo $user->id; ?><br/>
 					Niveau : <?php echo $user->niveauId; ?><br/>
-					Nombre de grain de poivre <?php echo $user->poivre ?><br/>
-					Date derniere connection <?php echo $user->dateDerniereConnection; ?>"<br/>
+					Nombre de grain de poivre : <?php echo $user->poivre ?><br/>
+					Date derniere connection : <?php echo $user->dateDerniereConnection; ?><br/>
 					Nom : <input name="nom" value="<?php echo $user->nom; ?>"/><br/>
 					Prenom : <input name="prenom" value="<?php echo $user->prenom; ?>"/><br/>	
 					Pseudo : <input name="pseudo" value="<?php echo $user->pseudo; ?>"/>	<br/>

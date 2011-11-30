@@ -6,6 +6,7 @@
 	$notification=new Notification();
 	
 	//penser a proteger les champs des caracteres speciaux
+	$notification->type = mysql_escape_string($_POST['type']."");
 	$notification->desc = mysql_escape_string($_POST['desc']."");
 	$notification->recepteurId = mysql_escape_string($_POST['recepteurId']."");
 	$notification->emetteurId = mysql_escape_string($_POST['emetteurId']."");

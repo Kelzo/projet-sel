@@ -1,6 +1,7 @@
 <?php
 	Class Notification{
 		public $id;
+		public $type;
 		public $emetteurId;
 		public $recepteurId;
 		public $date;
@@ -9,6 +10,7 @@
 		
 		function __construct(){
 			$this->id='';
+			$this->type='';
 			$this->emetteurId='';
 			$this->recepteurId='';
 			$this->date='';
