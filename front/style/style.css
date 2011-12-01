@@ -44,3 +44,51 @@ width:25%;
 .clear{
 clear:both;
 }
+
+
+/*  MENU PRINCIPALE  */
+
+.menuP{
+width:1000px;
+height:39px;
+padding:0;
+background:url("img/background_Menu.png");
+}
+
+.menuP ul{
+margin: 0 0 0 28px;
+padding:0;
+}
+
+.menuP ul li{
+float:left;
+list-style-type:none;
+}
+
+.menuP ul li a{
+text-decoration:none;
+color:#afabab;
+display:block;
+height:39px;
+}
+
+.menuP ul li a.menuP_Links{
+font-size:18px;
+padding:7px 23px 0;
+}
+
+.menuP ul li a.menuP_Links:hover{
+background:url("img/rollhover_Menu.png")top left repeat-x;
+}
+
+.menuP ul li a.decoBouton{
+width:48px;
+background:url("img/bouton_Deco.png");
+font-size:0px;
+}
+
+.menuP ul li a.decoBouton:hover{
+background:url("img/rollhover_Deco.png");
+}
+
+
