@@ -45,6 +45,8 @@
 							<input name="ville" value="<?php echo $user->ville;?>"/>
 							<label for="coutPoivre">Cout Poivre</label>
 							<input name="coutPoivre"/>
+							<label for="permanente">Permanente</label>
+							<input name="permanente"/>
 						</div>
 						<a class="clear"></a><input name="crea" value="Creer" type="submit"/></a>
 					</fieldset>		
@@ -87,7 +89,13 @@
 				<?php
 				//formulaire de reponse
 				?>
-					
+					<br/>Cette annonce vous interesse? Proposez quelque chose en echange!!!
+					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
+						<input name="annonceId" type="hidden" value="<?php echo $blop->id; ?>"/>
+						Vos annonces : <?php $util->getListeVosAnnonces($user->id);?>
+						Poivre : <input name="poivre"/>
+						<input name="reponse" type="submit"/>
+					</form>				
 				<?php 
 				?><hr/><?php 
 			}		

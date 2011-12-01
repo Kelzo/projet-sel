@@ -28,6 +28,7 @@
 						<td>Id annonce parent</td>
 						<td>Annonce Valid&eacute;</td>
 						<td>Date Publication</td>
+						<td>Permanente</td>
 						<td>Edition</td>
 						<td>Supprimer</td>
 					</tr>
@@ -48,6 +49,7 @@
 						<td><?php $util->getListAnnonceParent($blop->idAnnonceParent);?></td>
 						<td><input name="annonceValide" value="<?php echo $blop->annonceValide; ?>"/></td>
 						<td><input name="datePublication" value="<?php echo $blop->datePublication; ?>"/></td>
+						<td><input name="permanente" value="<?php echo $blop->permanente; ?>"/></td>
 						<td><input value="E" type="submit"/></td>				
 					</form>
 					<form method="POST" action="annonce/supprimerAnnonce.php">
@@ -94,6 +96,8 @@
 							<input name="annonceValide"/>
 							<label for="datePublication" class="datePicker"> Id Annonce Parent</label>
 							<input class="datePicker" name="datePublication"/>
+							<label for="permanente">Permanente</label>
+							<input name="permanente"/>
 						</div>
 						<a class="clear"></a><input value="Creer" type="submit"/></a>
 					</fieldset>		

@@ -12,6 +12,20 @@
 				$qAnnonce->delete($_POST['annonceId']);				
 			}
 			
+			//on traite la reponse
+			if(ISSET($_POST['reponse'])){
+				$notif1 = new Notification();
+				$notif1->date=date('Y-m-d',time());
+				$notif1->desc="Vous avez commenté l'annonce ".$_POST['annonceId'];
+				$notif1->desc=mysql_escape_string($notif1->desc);
+				$notif1->etat="REPONDU";
+				$notif1->recepteurId=$user->id;
+				$notif1->emetteurId=$user->id;
+				$notif1->type="COMMENTAIRE";
+				$notif1->annonceId=$_POST['annonceId'];
+				$notif1->transactionDirectId=-1;
+			}
+			
 			//on traite le formulaire commentaire
 			if(ISSET($_POST['commentaire'])){
 				$newCom = new Commentaire();
@@ -30,6 +44,8 @@
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
 				$notif1->type="COMMENTAIRE";
+				$notif1->annonceId=$_POST['annonceId'];
+				$notif1->transactionDirectId=-1;
 				$qNotif=new QueryNotification();
 				$qNotif->insert($notif1);
 				
@@ -42,6 +58,8 @@
 				$notif2->etat="REPONDU";
 				$notif2->recepteurId=$annonce->utilisateurId;
 				$notif2->emetteurId=$user->id;
+				$notif1->annonceId=$_POST['annonceId'];
+				$notif1->transactionDirectId=-1;
 				$notif2->type="COMMENTAIRE";
 				$qNotif->insert($notif2);
 			}
@@ -77,6 +95,7 @@
 				$annonceNew->idAnnonceParent = -1;	
 				$annonceNew->annonceValide = false;	
 				$annonceNew->datePublication = date('Y-m-d',time());
+				$annonceNew->permanente= mysql_escape_string($_POST['permanente']."");
 				$qAnnonce->insert($annonceNew);
 			}		
 		}

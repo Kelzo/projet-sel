@@ -19,6 +19,7 @@
 	$annonce->idAnnonceParent = mysql_escape_string($_POST['idAnnonceParent']."");	
 	$annonce->annonceValide = mysql_escape_string($_POST['annonceValide']."");	
 	$annonce->datePublication = mysql_escape_string($_POST['datePublication']."");
+	$annonce->permanente = mysql_escape_string($_POST['permanente']."");
 	
 	$qAnnonce=new QueryAnnonce();
 	$qAnnonce->update($annonce);

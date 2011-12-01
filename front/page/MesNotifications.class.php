@@ -1,6 +1,9 @@
 <?php
 	include 'manager/QueryNotification.class.php'; 
+	include 'manager/QueryTransactionDirect.class.php';
 	include 'domaine/Notification.class.php';
+	include 'domaine/TransactionDirect.class.php';
+	
 	class MesNotifications{
 		function __construct(){
 			$util=new Util();
@@ -29,7 +32,13 @@
 				//on valide la transaction
 				$vendeur = $qUser->getById($repNotification->recepteurId);
 				$acheteur = $qUser->getById($repNotification->emetteurId);
-				
+				$qTransaction = new QueryTransactionDirect();
+				$transaction = new TransactionDirect();
+				$transaction = $qTransaction->getById($notification->transactionDirectId);
+				$vendeur->poivre+=$transaction->prix;
+				$qUser->update($vendeur);
+				$acheteur->poivre-=$transaction->prix;
+				$qUser->update($acheteur);
 				
 			}else if(ISSET($_POST['refuser'])){
 				//la notification direct a été refusé 
@@ -55,7 +64,9 @@
 			
 			$listeNotification = $qNotification->getByRecepteurId($user->id);
 			while ($blop=mysql_fetch_object($listeNotification)){
+				//recuperation de la transaction ou de l'annonce associé
 				echo "Par : ".$util->getNomPrenomById($blop->emetteurId)."<br/>".$blop->desc."<br/>Daté du ".$blop->date."<br/>";
+				
 				if($blop->etat!="REPONDU"){
 				?>
 					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">

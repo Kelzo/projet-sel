@@ -165,6 +165,23 @@
 			<?php 
 		}
 		
+		function getListeVosAnnonces($idUser){
+			?>
+			<select name="annonceId">
+				<option value="-1">Choisir une annonce ...</option>
+				<?php 
+					$qAnnonce = new QueryAnnonce();
+					$listeAnnonce = $qAnnonce->getByUserId($idUser);
+					while($blop=mysql_fetch_object($listeAnnonce)){
+						?>
+							<option value="<?php echo $blop->id;?>"><?php echo $blop->titre;?></option>
+						<?php
+					}
+				?>
+			</select>
+			<?php 
+		}
+		
 		function getNomPrenomById($id){
 			$qUtilisateur = new QueryUtilisateur();
 			$user= $qUtilisateur->getById($id);

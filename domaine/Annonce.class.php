@@ -13,6 +13,7 @@
 		public $idAnnonceParent;
 		public $annonceValide;
 		public $datePublication;
+		public $permanente;
 		
 		function __construct(){
 			$this->id='';
@@ -28,6 +29,7 @@
 			$this->idAnnonceParent='';
 			$this->annonceValide='';
 			$this->datePublication='';
+			$this->permanente='';
 		}	
 	}
 ?>

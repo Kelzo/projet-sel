@@ -7,6 +7,7 @@
 	class CreerTransactionDirect{
 		function __construct(){		
 			$util = new Util();
+			$qUtilisateur =new QueryUtilisateur();
 			if(ISSET($_POST['recepteurId'])){
 				//on charge l'objet
 				$transactionDirect = new TransactionDirect();
@@ -21,12 +22,15 @@
 				//generation de la notification
 				$notification = new Notification();
 				$notification->date=date('Y-m-d', time());
-				$notification->desc="Vous avez reçu une demande de transaction direct de la part de ".$transactionDirect->emetteurId." concernant ".$transactionDirect->desc;
+				$notification->desc="Vous avez reçu une demande de transaction direct";
 				$notification->type=TRANSACTION_DIRECT;
 				$notification->etat="EN_ATTENTE";
 				$notification->emetteurId=$_SESSION['id'];
 				$notification->recepteurId=$_POST['recepteurId'];
-				$notification->transactionDirectId = 
+				//recuperation de la derniere transaction direct
+				$lastTransaction = $qTransactionDirect->getLastTransaction();
+				$notification->transactionDirectId = $lastTransaction->id;
+				$notification->annonceId=-1;
 				$qNotification = new QueryNotification();
 				$qNotification->insert($notification);
 			}
