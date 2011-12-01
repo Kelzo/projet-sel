@@ -63,11 +63,20 @@
 					}else if($i==1){
 						//login reussi
 						$_SESSION['id']=$user->id;
+						$_SESSION['niveauId']=$user->niveauId;
 						//on met a jour la date de derniere connection
 						$user->dateDerniereConnection=date('Y-m-d', time());
 						$qUitlisateur->update($user);
-						header("location:home.php");
-					}else{
+						
+						//On vérifie le niveau de l'utilisateur & redirection admin ou user
+						if($_SESSION['niveauId']==-1)
+						{
+							header("location:front/admin/");
+						}
+						else {
+						header("location:home.php");}
+						}
+					else{
 						//probleme technique
 						echo "Probleme technique veuillez contacter l'administrateur<br/>";
 					}
