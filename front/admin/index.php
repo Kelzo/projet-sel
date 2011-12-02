@@ -22,8 +22,13 @@
 			$('.datePicker').datepicker();
 		</script>
 		
+		
 		</head>
 		<body>
+	<?php 
+	if(ISSET($_SESSION['niveauId'])){
+		if($_SESSION['niveauId']==-1){
+	?>
 <div id="admin">
 	<a href="index.php?pageAdmin=annonce">Annonces</a><br/>
 	<a href="index.php?pageAdmin=niveau">Niveau</a><br/>
@@ -35,6 +40,18 @@
 	<a href="index.php?pageAdmin=notification">Notification</a><br/>
 	<a href="index.php?pageAdmin=deco">Log out</a>
 	<?php
+	}
+		else {
+			header("location:http://localhost/my-projet-sel/");
+		}
+	}
+	
+	else {
+		header("location:http://localhost/my-projet-sel/");
+	}
+	
+	
+	
 		if(!isset($_GET['pageAdmin'])){
 			
 		}else{
