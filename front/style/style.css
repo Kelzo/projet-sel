@@ -91,4 +91,94 @@ font-size:0px;
 background:url("img/rollhover_Deco.png");
 }
 
+/* MENU UTILISATEUR */
+.menuTop{
+height:132px;
+}
 
+.menu_User{
+padding-left: 53px;
+padding-top: 43px;
+}
+
+.menu_User ul{
+margin:0;
+padding:0;
+width:508px;
+border-bottom:2px solid #37535b;
+}
+
+.menu_User ul li{
+list-style-type:none;
+display:inline;
+margin-left:43px;
+}
+
+.menu_User ul li a{
+font-size:16px;
+color:#2f2f2f;
+text-decoration:none;
+}
+
+/* CHAMP RECHERCHE/RECHERCHE AVANCEE */
+
+.rechercher {
+float: right;
+margin-right: 50px;
+margin-top: -52px;
+}
+
+.rechercher .soumettre{
+font-size: 0;
+height: 22px;
+margin-left: 160px;
+margin-top: 0;
+position: absolute;
+width: 28px;
+cursor:pointer;
+background-color:transparent;
+border:none;
+}
+
+.rechercher form p{
+margin:0;
+width:194px;
+height:22px;
+background:url("img/rechercher.png");
+}
+
+.rechercher form p input{
+background:#d0d9e2;
+border:0;
+margin-left: 9px;
+width: 154px;
+}
+
+.rechercher form a{
+color:#2f2f2f;
+font-size:12px;
+}
+
+/* PIED DE PAGE */
+
+#footer{
+width:1000px;
+height:24px;
+background:url("img/footer.png");
+}
+
+#footer p {
+float: right;
+font-size: 12px;
+margin-right: 7px;
+margin-top: 4px;
+}
+
+#footer p a{
+text-decoration:none;
+color:#ffffff;
+}
+
+#footer p a:hover{
+text-decoration:underline;
+}
