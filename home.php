@@ -10,14 +10,8 @@
 	new Header();
 	new Protect();
 	new MenuP();	
-	?>
-		<div class="menuTop">
-		<?php
-			new MenuUser();
-			new Search();
-		?>
-		</div>
-	<?php
+	new MenuUser();
+	new Search();
 	new Home();
 	new Footer();	 		
 ?>
