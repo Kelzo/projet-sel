@@ -37,17 +37,16 @@
 			?>
 			</table>
 			<br/><br/>
-				<form method="POST" action="typeAnnonce/creerTypeAnnonce.php">
-					<fieldset class="adminForm"><legend>Créer un Type d'Annonce </legend>
-						<div class="left">
+				<form method="POST"  id="adminForm" action="typeAnnonce/creerTypeAnnonce.php">
+					<fieldset><legend>Créer un Type d'Annonce </legend>
 							<label for="label">Label</label>
 							<input name="label"/>
 							<label for="label">Type</label>
 							<input name="type"/>
-						</div>
-						<a class="clear"></a><input value="Creer" type="submit"/></a>
 					</fieldset>
-						
+					<p>
+        			<input type="submit" name="submit" value ="créer" />
+    				</p>	
 				</form>
 			<?php
 		}

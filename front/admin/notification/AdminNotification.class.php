@@ -52,9 +52,8 @@
 			?>
 			</table>
 			<br/><br/>
-				<form method="POST" action="notification/creerNotification.php">
-					<fieldset class="adminForm"><legend>Créer une annonce </legend>
-						<div class="left">
+				<form method="POST" id="adminForm" action="notification/creerNotification.php">
+					<fieldset><legend>Créer une annonce </legend>
 							<label for="desc">Description</label>
 							<input name="desc"/>
 							<label for="">Type</label>
@@ -71,10 +70,10 @@
 							<?php $util->getListAnnonce('');?>
 							<label for="transactionDirectId">Transaction Direct</label>
 							<?php $util->getListTransactionDirect('');?>
-						</div>
-						<a class="clear"></a><input value="Creer" type="submit"/></a>
 					</fieldset>
-							
+					<p>
+        			<input type="submit" name="submit" value ="créer" />
+    				</p>		
 				</form>
 			<?php
 		}

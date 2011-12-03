@@ -64,9 +64,8 @@
 			?>
 			</table>
 			<br/><br/>
-				<form method="POST" action="utilisateur/creerUtilisateur.php">
-					<fieldset class="adminForm"><legend>Créer un Utilisateur </legend>
-							<div class="left">
+				<form method="POST"  id="adminForm" action="utilisateur/creerUtilisateur.php">
+					<fieldset><legend>Créer un Utilisateur </legend>
 								<label for="nom">Nom</label>
 								<input name="nom"/>
 								<label for="niveau">Niveau</label>
@@ -77,8 +76,6 @@
 								<input name="pseudo"/>
 								<label for="password">Password</label>
 								<input name="password"/>
-							</div>
-							<div class="left">
 								<label for="email">Email</label>
 								<input name="email"/>
 								<label for="adresse">Adresse</label>
@@ -87,25 +84,23 @@
 								<input name="cp"/>
 								<label for="ville">Ville</label>
 								<input name="ville"/>
-							</div>
-							<div class="left">
 								<label for="poivre">Poivre</label>
 								<input name="poivre"/>
 								<label for="telephoneFixe">Telephone Fixe</label>
 								<input name="telephoneFixe"/>
 								<label for="telephonePortable">Telephone Portable</label>
 								<input name="telephonePortable"/>
-							</div>
-							<div class="left">
 								<label for="dateDerniereConnection">Date Derniere Connection</label>
 								<input name="dateDerniereConnection"/>
 								<label for="photo">Photo</label>
 								<input name="photo"/>
 									
 							</div>
-							<a class="clear"></a><input value="Creer" type="submit"/></a>
+							
 						</fieldset>	
-						
+						<p>
+        				<input type="submit" name="submit" value ="créer" />
+    					</p>
 				</form>
 			<?php
 		}

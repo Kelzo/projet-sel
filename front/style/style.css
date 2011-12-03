@@ -5,35 +5,102 @@ margin:0 auto;
 font-family:Arial;
 }
 
+
+
+
 /* PARTIE ADMIN */
 
 #admin{
 }
 
 #admin input.submit{
-background-color:#37535b;
+background-color:#0082c8;
 color:white;
 padding:5px;
+border:2px solid #f2f2f2;
+}
+
+#admin input.submit:hover{
+border:2px solid #00d2b8;
+}
+
+#admin input,textarea,select{
+background-color:#0082c8;
+color:white;
+border:2px solid #f2f2f2;
+}
+
+#admin input:hover,textarea:hover,select:hover{
+border:2px solid #00d2b8;
 }
 
 #admin a{
 font-weight:bold;
-padding:5px;
-display:block;
+padding:10px;
+display:inline;
 text-decoration:none;
-color:#37535b;
+color:#0082c8;
 }
 
 #admin a:hover{
 text-decoration:underline;
+color:#00d2b8;
+}
+
+#admin div.menu{
+margin:30px 10px;
 }
 
 
-.adminForm label{
-margin-top:10px;
-display:block;
-color:#37535b;
-font-weight:bold;
+
+
+
+/* ADMIN FORMULAIRE  */
+
+#adminForm
+{	
+width:700px;	
+}
+#adminForm label{
+	color:#0082c8;
+	display: block;
+	width: 30%;
+	float: left;
+	padding-right: 1%;
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+#adminForm input, #adminForm select
+{
+	margin-left: 1%;
+	width: 60%;
+	border:2px solid #f2f2f2;
+}
+
+/* button submit */
+#adminForm input[type="submit"]
+{
+	border:2px solid #f2f2f2;
+	width: 27%;
+}
+
+#adminForm input[type="submit"]:hover
+{
+	background-color: #00d2b8;
+	cursor: pointer;
+}
+
+#adminForm input[type="reset"]
+{
+	border:2px solid #f2f2f2;
+	width: 27%;
+}
+
+#adminForm input[type="reset"]:hover
+{
+	background-color: #E6484D;
+	cursor: pointer;
 }
 
 .left{
@@ -44,6 +111,9 @@ width:25%;
 .clear{
 clear:both;
 }
+
+
+
 
 
 /*  MENU PRINCIPALE  */
@@ -91,7 +161,11 @@ font-size:0px;
 background:url("img/rollhover_Deco.png");
 }
 
+
+
+
 /* MENU UTILISATEUR */
+
 .menuTop{
 height:132px;
 }
@@ -119,6 +193,10 @@ font-size:16px;
 color:#2f2f2f;
 text-decoration:none;
 }
+
+
+
+
 
 /* CHAMP RECHERCHE/RECHERCHE AVANCEE */
 
@@ -158,6 +236,9 @@ width: 154px;
 color:#2f2f2f;
 font-size:12px;
 }
+
+
+
 
 /* PIED DE PAGE */
 

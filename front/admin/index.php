@@ -30,15 +30,17 @@
 		if($_SESSION['niveauId']==-1){
 	?>
 <div id="admin">
-	<a href="index.php?pageAdmin=annonce">Annonces</a><br/>
-	<a href="index.php?pageAdmin=niveau">Niveau</a><br/>
-	<a href="index.php?pageAdmin=typeAnnonce">Type des annonces</a><br/>
-	<a href="index.php?pageAdmin=commentaire">Commentaire</a><br/>
-	<a href="index.php?pageAdmin=utilisateur">Utilisateur</a><br/>
-	<a href="index.php?pageAdmin=contenuLibre">Contenu Libre</a><br/>
-	<a href="index.php?pageAdmin=transactionDirect">Transaction Direct</a><br/>
-	<a href="index.php?pageAdmin=notification">Notification</a><br/>
+ <div class="menu">
+	<a href="index.php?pageAdmin=annonce">Annonce</a>
+	<a href="index.php?pageAdmin=niveau">Niveau</a>
+	<a href="index.php?pageAdmin=typeAnnonce">Types Annonce</a>
+	<a href="index.php?pageAdmin=commentaire">Commentaire</a>
+	<a href="index.php?pageAdmin=utilisateur">Utilisateur</a>
+	<a href="index.php?pageAdmin=contenuLibre">Contenu</a>
+	<a href="index.php?pageAdmin=transactionDirect">Transaction</a>
+	<a href="index.php?pageAdmin=notification">Notification</a>
 	<a href="index.php?pageAdmin=deco">Log out</a>
+ </div>
 	<?php
 	}
 		else {

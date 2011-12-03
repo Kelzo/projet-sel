@@ -42,9 +42,8 @@
 			?>
 			</table>
 			<br/><br/>
-				<form method="POST" action="transactionDirect/creerTransactionDirect.php">
-					<fieldset class="adminForm"><legend>Créer une Transaction Directe </legend>
-						<div class="left">
+				<form method="POST" id="adminForm" action="transactionDirect/creerTransactionDirect.php">
+					<fieldset ><legend>Créer une Transaction Directe </legend>
 							<label for="description">Description</label>
 							<input name="desc"/>
 							<label for="recepteurId">Recepteur</label>
@@ -53,9 +52,11 @@
 							<?php $util->getListEmetteur('');?>
 							<label for="emetteurId">Prix</label>
 							<input name="prix"/>
-						</div>
+
 					</fieldset>
-					<a class="clear"></a><input value="Creer" type="submit"/></a>		
+					<p>
+        			<input type="submit" name="submit" value ="créer" />
+    				</p>		
 				</form>
 			<?php
 		}

@@ -38,16 +38,16 @@
 			</table>
 			<br/><br/>
 			
-				<form method="POST" action="contenuLibre/creerContenuLibre.php">
-					<fieldset class="adminForm"><legend>Créer un contenu libre </legend>
-						<div class="left">
+				<form method="POST" id="adminForm" action="contenuLibre/creerContenuLibre.php">
+					<fieldset><legend>Créer un contenu libre </legend>
 							<label for="idFonctionnel">Id Fonctionnel</label>
 							<?php $util->getListIdFContenu(''); ?>	
 							<label for="texte">Texte</label>
 							<textarea name="texte"/></textarea> <br/>
-							<input value="Creer" type="submit"/>
-						</div>
 					</fieldset>
+					<p>
+        			<input type="submit" name="submit" value ="créer" />
+    				</p>	
 				</form>
 			<?php
 		}
