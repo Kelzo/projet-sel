@@ -9,10 +9,15 @@
 	//test commit
 	new Header();
 	new Protect();
-	new MenuP();
-	new MenuUser();
-	new Search();
+	new MenuP();	
+	?>
+		<div class="menuTop">
+		<?php
+			new MenuUser();
+			new Search();
+		?>
+		</div>
+	<?php
 	new Home();
 	new Footer();	 		
-	
 ?>

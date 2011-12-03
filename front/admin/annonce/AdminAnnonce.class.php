@@ -40,7 +40,7 @@
 						<td><?php $util->getListUtilisateur($blop->utilisateurId);?></td>
 						<td><?php $util->getListTypeAnnonce($blop->typeAnnonceId);?></td>
 						<td><input name="titre" value="<?php echo $blop->titre; ?>"/></td>
-						<td><textarea name="desc"><?php echo $blop->desc; ?></textarea></td>	
+						<td><input name="desc" value="<?php echo $blop->desc; ?>"/></td>	
 						<td><input name="date" value="<?php echo $blop->date; ?>"/></td>	
 						<td><input name="adresse" value="<?php echo $blop->adresse; ?>"/></td>	
 						<td><input name="cp" value="<?php echo $blop->cp; ?>"/></td>
@@ -63,33 +63,32 @@
 			?>
 			</table>
 			<br/><br/>
-				<form method="POST" action="annonce/creerAnnonce.php">
-					<fieldset class="adminForm"><legend>Créer une annonce </legend>
-						<div class="left">
+				<form method="POST" id="adminForm" action="annonce/creerAnnonce.php">
+					<fieldset ><legend>Créer une annonce </legend>
+					
 							<label for="utilisateurId">Utilisateur</label>
 							<?php $util->getListUtilisateur('');?>
 							<label for="typeAnnonceId">Type</label>
 							<?php $util->getListTypeAnnonce('');?>
 							<label for="titre">Titre</label>
 							<input name="titre"/>
-							</div>
-						<div class="left"> 
+							
+					
 							<label for="description">Description</label>
-							<textarea name="description"></textarea>
+							<input type="text" name="description" />
 							<label for="date">Date</label>
 							<input name="date"/>
 							<label for="adresse">Adresse</label>
 							<input name="adresse"/>
-						</div>
-						<div class="left"> 
+						
+					
 							<label for="cp">Cp</label>
 							<input name="cp"/>
 							<label for="ville">Ville</label>
 							<input name="ville"/>
 							<label for="coutPoivre">Cout Poivre</label>
 							<input name="coutPoivre"/>
-						</div>
-						<div class="left"> 
+						
 							<label for="idAnnonceParent"> Id Annonce Parent</label>
 							<?php $util->getListAnnonceParent('');?>
 							<label for="annonceValide"> Annonce Valide </label>
@@ -98,9 +97,11 @@
 							<input class="datePicker" name="datePublication"/>
 							<label for="permanente">Permanente</label>
 							<input name="permanente"/>
-						</div>
-						<a class="clear"></a><input value="Creer" type="submit"/></a>
-					</fieldset>		
+							</fieldset>	
+							<p>
+        					<input type="submit" name="submit" value ="créer" />
+    						</p>	
+					
 				</form>
 			<?php
 		}

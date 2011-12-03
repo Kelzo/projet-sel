@@ -43,9 +43,9 @@
 			?>
 			</table>
 			<br/><br/>
-				<form method="POST" action="commentaire/creerCommentaire.php">
-					<fieldset class="adminForm"><legend>Créer un commentaire </legend>
-						<div class="left">
+				<form method="POST" id="adminForm" action="commentaire/creerCommentaire.php">
+					<fieldset ><legend>Créer un commentaire </legend>
+						
 							<label for="text">Texte</label>
 							<input name="texte"/><br/>
 							<label for="datePublication">Date</label>
@@ -54,9 +54,10 @@
 							<?php $util->getListAnnonce(''); ?><br/>
 							<label for="utilisateurId">Utilisateur</label>
 							<?php $util->getListUtilisateur('');?><br/>					
-						</div>
 					</fieldset>
-					<input value="Creer" type="submit"/>		
+					<p>
+        			<input type="submit" name="submit" value ="créer" />
+    				</p>		
 				</form>
 			<?php
 		}
