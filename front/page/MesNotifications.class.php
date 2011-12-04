@@ -1,6 +1,7 @@
 <?php
 	include 'manager/QueryNotification.class.php'; 
 	include 'manager/QueryTransactionDirect.class.php';
+	include 'manager/QueryAnnonce.class.php';
 	include 'domaine/Notification.class.php';
 	include 'domaine/TransactionDirect.class.php';
 	
@@ -8,6 +9,8 @@
 		function __construct(){
 			$util=new Util();
 			$qNotification= new QueryNotification();
+			$qAnnonce= new QueryAnnonce();
+			$qTransaction = new QueryTransactionDirect();
 			$id = $_SESSION['id'];
 			$qUser = new QueryUtilisateur();
 			$user = $qUser->getById($id);
@@ -27,12 +30,13 @@
 				$repNotification->desc="Demande acceptée";
 				$repNotification->etat="REPONDU";
 				$repNotification->type="TRANSACTION_DIRECT";
+				$repNotification->annonceId=-1;
+				$repNotification->transactionDirectId=$notification->transactionDirectId;
 				$qNotification->insert($repNotification);
 				
 				//on valide la transaction
 				$vendeur = $qUser->getById($repNotification->recepteurId);
 				$acheteur = $qUser->getById($repNotification->emetteurId);
-				$qTransaction = new QueryTransactionDirect();
 				$transaction = new TransactionDirect();
 				$transaction = $qTransaction->getById($notification->transactionDirectId);
 				$vendeur->poivre+=$transaction->prix;
@@ -55,6 +59,8 @@
 				$repNotification->desc="Demande refusée";
 				$repNotification->etat="REPONDU";
 				$repNotification->type="TRANSACTION_DIRECT";
+				$repNotification->annonceId=-1;
+				$repNotification->transactionDirectId=$notification->transactionDirectId;
 				$qNotification->insert($repNotification);
 			}
 			
@@ -65,7 +71,15 @@
 			$listeNotification = $qNotification->getByRecepteurId($user->id);
 			while ($blop=mysql_fetch_object($listeNotification)){
 				//recuperation de la transaction ou de l'annonce associé
-				echo "Par : ".$util->getNomPrenomById($blop->emetteurId)."<br/>".$blop->desc."<br/>Daté du ".$blop->date."<br/>";
+				$concernant;
+				if($blop->annonceId!=-1){
+					$concernant = $qAnnonce->getById($blop->annonceId);
+				}else if($blop->transactionDirectId!=-1){
+					$concernant = $qTransaction->getById($blop->transactionDirectId);
+				}
+				echo "Par : ".$util->getNomPrenomById($blop->emetteurId)."<br/>".$blop->desc."<br/>";
+				echo "Concernant : ".$concernant->desc."<br/>";
+				echo "Daté du ".date('d-m-Y',strtotime($blop->date))."<br/>";
 				
 				if($blop->etat!="REPONDU"){
 				?>

@@ -67,7 +67,7 @@
 					//recuperation de l'utilisateur
 					$qEmmetteur = new QueryUtilisateur();
 					$emmetteur = $qEmmetteur->getById($blip->utilisateurId); 
-					echo $blip->datePublication." : ".$blip->texte."<br/>Posté par : ".$emmetteur->nom." ".$emmetteur->prenom."<br/>";
+					echo date('d-m-Y',strtotime($blip->datePublication))." : ".$blip->texte."<br/>Posté par : ".$emmetteur->nom." ".$emmetteur->prenom."<br/>";
 					//ajout de la commande de suppression
 					if($blip->utilisateurId==$user->id){
 						?>

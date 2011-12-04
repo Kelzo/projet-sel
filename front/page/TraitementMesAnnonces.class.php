@@ -7,6 +7,7 @@
 			$qUser = new QueryUtilisateur();
 			$user = $qUser->getById($id);
 			$qCom = new QueryCommentaire();
+			$qNotif = new QueryNotification();
 			//on traite la suppression
 			if(ISSET($_POST['suppressionAnnonce'])){
 				$qAnnonce->delete($_POST['annonceId']);				
@@ -14,16 +15,32 @@
 			
 			//on traite la reponse
 			if(ISSET($_POST['reponse'])){
+				//envoi des deux notifications
 				$notif1 = new Notification();
 				$notif1->date=date('Y-m-d',time());
-				$notif1->desc="Vous avez commenté l'annonce ".$_POST['annonceId'];
-				$notif1->desc=mysql_escape_string($notif1->desc);
+				//on recupere l'annonce associé
+				$annonce = $qAnnonce->getById($_POST['annonceId']);
+				$notif1->desc=mysql_escape_string("Vous etez interessé par l'annonce ".$annonce->titre);
 				$notif1->etat="REPONDU";
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
-				$notif1->type="COMMENTAIRE";
+				$notif1->type="REPONSE";
 				$notif1->annonceId=$_POST['annonceId'];
 				$notif1->transactionDirectId=-1;
+				$qNotif->insert($notif1);
+				
+				$notif2 = new Notification();
+				$notif2->date=date('Y-m-d',time());
+				//on recupere l'annonce associé
+				$annonce = $qAnnonce->getById($_POST['annonceId']);
+				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." est interessé par l'annonce ".$annonce->titre);
+				$notif2->etat="EN_ATTENTE";
+				$notif2->recepteurId=$annonce->utilisateurId;
+				$notif2->emetteurId=$user->id;
+				$notif2->type="REPONSE";
+				$notif2->annonceId=$_POST['annonceId'];
+				$notif2->transactionDirectId=-1;
+				$qNotif->insert($notif2);
 			}
 			
 			//on traite le formulaire commentaire
@@ -31,35 +48,33 @@
 				$newCom = new Commentaire();
 				$newCom->annonceId=$_POST['annonceId'];
 				$newCom->datePublication= date('Y-m-d',time());
-				$newCom->texte=$_POST['texte'];
+				$newCom->texte=mysql_escape_string($_POST['texte']);
 				$newCom->utilisateurId=$user->id; 
 				$qCom->insert($newCom);
 				
 				//on envoie une notification a celui qui a écrit le com
 				$notif1 = new Notification();
 				$notif1->date=date('Y-m-d',time());
-				$notif1->desc="Vous avez commenté l'annonce ".$_POST['annonceId'];
-				$notif1->desc=mysql_escape_string($notif1->desc);
+				$annonce = $qAnnonce->getById($_POST['annonceId']);
+				$emetteurAnnonce = $qUser->getById($annonce->utilisateurId);
+				$notif1->desc=mysql_escape_string("Vous avez commenté l'annonce concernant ".$annonce->desc." proposé par ".$emetteurAnnonce->nom." ".$emetteurAnnonce->prenom);
 				$notif1->etat="REPONDU";
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
 				$notif1->type="COMMENTAIRE";
 				$notif1->annonceId=$_POST['annonceId'];
 				$notif1->transactionDirectId=-1;
-				$qNotif=new QueryNotification();
 				$qNotif->insert($notif1);
 				
-				//on recupere l'annonce
-				$annonce = $qAnnonce->getById($_POST['annonceId']);
 				//on envoie une notification a celui qui a écrit l'annonce
 				$notif2 = new Notification();
 				$notif2->date=date('Y-m-d',time());
-				$notif2->desc=$user->id." a commenté votre annonce ".$_POST['annonceId'];
+				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." a commenté votre annonce ".$annonce->titre);
 				$notif2->etat="REPONDU";
 				$notif2->recepteurId=$annonce->utilisateurId;
 				$notif2->emetteurId=$user->id;
-				$notif1->annonceId=$_POST['annonceId'];
-				$notif1->transactionDirectId=-1;
+				$notif2->annonceId=$_POST['annonceId'];
+				$notif2->transactionDirectId=-1;
 				$notif2->type="COMMENTAIRE";
 				$qNotif->insert($notif2);
 			}
@@ -70,13 +85,14 @@
 				//on envoie une notification
 				$notif1 = new Notification();
 				$notif1->date=date('Y-m-d',time());
-				$notif1->desc="Vous avez supprimé un de vos commentaires de l'annonce ".$_POST['annonceId'];
-				$notif1->desc=mysql_escape_string($notif1->desc);
+				$annonce = $qAnnonce->getById($_POST['annonceId']);
+				$notif1->desc=mysql_escape_string("Vous avez supprimé un de vos commentaires de l'annonce ".$annonce->titre);
 				$notif1->etat="REPONDU";
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
+				$notif1->annonceId=$annonce->id;
+				$notif1->transactionDirectId=-1;
 				$notif1->type="COMMENTAIRE";
-				$qNotif=new QueryNotification();
 				$qNotif->insert($notif1);
 			}
 			
