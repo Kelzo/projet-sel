@@ -32,7 +32,7 @@
 					<label for="poivre">Vos grains de poivre</label>
 					<span><?php echo $user->poivre ?></span>
 					<label for="dateDerniereConnection">Derniere connection </label>
-					<span><?php echo $user->dateDerniereConnection; ?></span>
+					<span><?php echo date('d-m-Y',strtotime($user->dateDerniereConnection)); ?></span>
 					<label for="nom">Nom</label>
 					<input name="nom" value="<?php echo $user->nom; ?>"/>
 					<label for="prenom">Prenom</label>

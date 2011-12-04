@@ -18,7 +18,7 @@
 			$user = $qUser->getById($id);
 			
 			if(ISSET($_POST['accepter'])){
-				//la notification direct a été accepté 
+				//la notification transaction a été accepté 
 				$notification = $qNotification->getById($_POST['id']);
 				$desc = $notification->desc."<br/>Demande acceptée<br/>";
 				$notification->desc=$desc;
@@ -49,13 +49,16 @@
 					$qTransaction = new QueryTransactionDirect();
 					$transaction = new TransactionDirect();
 					$transaction = $qTransaction->getById($notification->transactionDirectId);
+					$vendeur->poivre+=$transaction->prix;
+					$acheteur->poivre-=$transaction->prix;
 				}else if($notification->annonceId!=-1){
 					$qTransaction = new QueryTransaction();
 					$transaction = new Transaction();
 					$transaction = $qTransaction->getById($notification->annonceId);
+					$vendeur->poivre-=$transaction->prix;
+					$acheteur->poivre+=$transaction->prix;
 				}
-				$vendeur->poivre+=$transaction->prix;
-				$acheteur->poivre-=$transaction->prix;
+				
 				$qUser->update($acheteur);
 				$qUser->update($vendeur);
 				
@@ -100,6 +103,7 @@
 				}
 				echo "Par : ".$util->getNomPrenomById($blop->emetteurId)."<br/>".$blop->desc."<br/>";
 				echo "Concernant : ".$concernant->desc."<br/>";
+				echo "Pour : ".$concernant->prix." grains de poivres<br/>";
 				echo "Daté du ".date('d-m-Y',strtotime($blop->date))."<br/>";
 				
 				if($blop->etat!="REPONDU"){

@@ -33,6 +33,21 @@
 				$notification->annonceId=-1;
 				$qNotification = new QueryNotification();
 				$qNotification->insert($notification);
+				
+				//generation de la deuxieme notification
+				$notification = new Notification();
+				$notification->date=date('Y-m-d', time());
+				$notification->desc="Vous avez effectué une demande de transaction direct";
+				$notification->type=TRANSACTION_DIRECT;
+				$notification->etat="REPONDU";
+				$notification->emetteurId=$_SESSION['id'];
+				$notification->recepteurId=$_SESSION['id'];
+				//recuperation de la derniere transaction direct
+				$lastTransaction = $qTransactionDirect->getLastTransaction();
+				$notification->transactionDirectId = $lastTransaction->id;
+				$notification->annonceId=-1;
+				$qNotification = new QueryNotification();
+				$qNotification->insert($notification);
 			}
 			?><form id="adminForm" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
 				<fieldset ><legend>Transaction Directe</legend>
