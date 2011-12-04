@@ -20,7 +20,7 @@
 				$notif1->date=date('Y-m-d',time());
 				//on recupere l'annonce associé
 				$annonce = $qAnnonce->getById($_POST['annonceId']);
-				$notif1->desc=mysql_escape_string("Vous etez interessé par l'annonce ".$annonce->titre);
+				$notif1->desc=mysql_escape_string("Vous etez interessé par <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce ".$annonce->titre."</a>");
 				$notif1->etat="REPONDU";
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
@@ -33,7 +33,7 @@
 				$notif2->date=date('Y-m-d',time());
 				//on recupere l'annonce associé
 				$annonce = $qAnnonce->getById($_POST['annonceId']);
-				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." est interessé par l'annonce ".$annonce->titre);
+				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." est interessé par <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce ".$annonce->titre."</a>");
 				$notif2->etat="EN_ATTENTE";
 				$notif2->recepteurId=$annonce->utilisateurId;
 				$notif2->emetteurId=$user->id;
@@ -57,7 +57,7 @@
 				$notif1->date=date('Y-m-d',time());
 				$annonce = $qAnnonce->getById($_POST['annonceId']);
 				$emetteurAnnonce = $qUser->getById($annonce->utilisateurId);
-				$notif1->desc=mysql_escape_string("Vous avez commenté l'annonce concernant ".$annonce->desc." proposé par ".$emetteurAnnonce->nom." ".$emetteurAnnonce->prenom);
+				$notif1->desc=mysql_escape_string("Vous avez commenté <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce</a> concernant ".$annonce->desc." proposé par ".$emetteurAnnonce->nom." ".$emetteurAnnonce->prenom);
 				$notif1->etat="REPONDU";
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
@@ -69,7 +69,7 @@
 				//on envoie une notification a celui qui a écrit l'annonce
 				$notif2 = new Notification();
 				$notif2->date=date('Y-m-d',time());
-				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." a commenté votre annonce ".$annonce->titre);
+				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." a commenté votre <a href=consulterAnnonce.php?annonce=".$annonce->id.">annonce ".$annonce->titre."</a><br/>");
 				$notif2->etat="REPONDU";
 				$notif2->recepteurId=$annonce->utilisateurId;
 				$notif2->emetteurId=$user->id;
@@ -86,7 +86,7 @@
 				$notif1 = new Notification();
 				$notif1->date=date('Y-m-d',time());
 				$annonce = $qAnnonce->getById($_POST['annonceId']);
-				$notif1->desc=mysql_escape_string("Vous avez supprimé un de vos commentaires de l'annonce ".$annonce->titre);
+				$notif1->desc=mysql_escape_string("Vous avez supprimé un de vos commentaires de <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce ".$annonce->titre."</a><br/>");
 				$notif1->etat="REPONDU";
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
