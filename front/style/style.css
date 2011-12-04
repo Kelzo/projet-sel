@@ -24,13 +24,13 @@ border:2px solid #f2f2f2;
 border:2px solid #00d2b8;
 }
 
-#admin input,textarea,select{
+#admin input, #admin textarea, #admin select{
 background-color:#0082c8;
 color:white;
 border:2px solid #f2f2f2;
 }
 
-#admin input:hover,textarea:hover,select:hover{
+#admin input:hover, #admin textarea:hover, #admin select:hover{
 border:2px solid #00d2b8;
 }
 
