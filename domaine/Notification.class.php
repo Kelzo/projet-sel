@@ -9,6 +9,7 @@
 		public $etat;
 		public $annonceId;
 		public $transactionDirectId;
+		public $poivre;
 		
 		function __construct(){
 			$this->id='';
@@ -20,6 +21,7 @@
 			$this->etat='';
 			$this->annonceId='';
 			$this->transactionDirectId='';
+			$this->poivre='';
 		}	
 	}
 ?>

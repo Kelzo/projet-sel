@@ -29,9 +29,15 @@
 				$repNotification->recepteurId=$notification->emetteurId;
 				$repNotification->desc="Demande acceptée";
 				$repNotification->etat="REPONDU";
-				$repNotification->type="TRANSACTION_DIRECT";
-				$repNotification->annonceId=-1;
-				$repNotification->transactionDirectId=$notification->transactionDirectId;
+				if($notification->transactionDirectId!=-1){
+					$repNotification->type="TRANSACTION_DIRECT";
+					$repNotification->annonceId=-1;
+					$repNotification->transactionDirectId=$notification->transactionDirectId;
+				}else if($notification->annonceId!=-1){
+					$repNotification->type="REPONSE_ANNONCE";
+					$repNotification->annonceId=$notification->annonceId;
+					$repNotification->transactionDirectId=-1;
+				}
 				$qNotification->insert($repNotification);
 				
 				//on valide la transaction
@@ -40,9 +46,9 @@
 				$transaction = new TransactionDirect();
 				$transaction = $qTransaction->getById($notification->transactionDirectId);
 				$vendeur->poivre+=$transaction->prix;
-				$qUser->update($vendeur);
 				$acheteur->poivre-=$transaction->prix;
 				$qUser->update($acheteur);
+				$qUser->update($vendeur);
 				
 			}else if(ISSET($_POST['refuser'])){
 				//la notification direct a été refusé 
@@ -58,9 +64,15 @@
 				$repNotification->recepteurId=$notification->emetteurId;
 				$repNotification->desc="Demande refusée";
 				$repNotification->etat="REPONDU";
-				$repNotification->type="TRANSACTION_DIRECT";
-				$repNotification->annonceId=-1;
-				$repNotification->transactionDirectId=$notification->transactionDirectId;
+				if($notification->transactionDirectId!=-1){
+					$repNotification->type="TRANSACTION_DIRECT";
+					$repNotification->annonceId=-1;
+					$repNotification->transactionDirectId=$notification->transactionDirectId;
+				}else if($notification->annonceId){
+					$repNotification->type="REPONSE_ANNONCE";
+					$repNotification->annonceId=$notification->annonceId;
+					$repNotification->transactionDirectId=-1;
+				}
 				$qNotification->insert($repNotification);
 			}
 			
