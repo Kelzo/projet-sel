@@ -1,8 +1,6 @@
 <?php
 	class Home{
-		function __construct(){		
-		
-
+		function __construct(){	
 		
 		}
 	}
