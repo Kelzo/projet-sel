@@ -25,9 +25,9 @@ border:2px solid #00d2b8;
 }
 
 #admin input, #admin textarea, #admin select{
-background-color:#0082c8;
-color:white;
-border:2px solid #f2f2f2;
+border:none;
+background-color:#f2f2f2;
+border-bottom:2px solid #0082c8;
 }
 
 #admin input:hover, #admin textarea:hover, #admin select:hover{
@@ -49,6 +49,24 @@ color:#00d2b8;
 
 #admin div.menu{
 margin:30px 10px;
+}
+
+/* button submit */
+#admin input[type="submit"]
+{
+	border:2px solid #f2f2f2;
+	padding:10px;
+	-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color:#0082c8;
+    color:white;
+}
+
+#admin input[type="submit"]:hover
+{
+	background-color: #00d2b8;
+	cursor: pointer;
 }
 
 
@@ -75,21 +93,11 @@ width:700px;
 {
 	margin-left: 1%;
 	width: 50%;
-	border:2px solid #f2f2f2;
+	border:none;
+	background-color:#f2f2f2;
+	border-bottom:2px solid #0082c8;	
 }
 
-/* button submit */
-#adminForm input[type="submit"]
-{
-	border:2px solid #f2f2f2;
-	width: 27%;
-}
-
-#adminForm input[type="submit"]:hover
-{
-	background-color: #00d2b8;
-	cursor: pointer;
-}
 
 #adminForm input[type="reset"]
 {
