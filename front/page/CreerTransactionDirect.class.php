@@ -33,14 +33,34 @@
 				$notification->annonceId=-1;
 				$qNotification = new QueryNotification();
 				$qNotification->insert($notification);
+				
+				//generation de la deuxieme notification
+				$notification = new Notification();
+				$notification->date=date('Y-m-d', time());
+				$notification->desc="Vous avez effectué une demande de transaction direct";
+				$notification->type=TRANSACTION_DIRECT;
+				$notification->etat="REPONDU";
+				$notification->emetteurId=$_SESSION['id'];
+				$notification->recepteurId=$_SESSION['id'];
+				//recuperation de la derniere transaction direct
+				$lastTransaction = $qTransactionDirect->getLastTransaction();
+				$notification->transactionDirectId = $lastTransaction->id;
+				$notification->annonceId=-1;
+				$qNotification = new QueryNotification();
+				$qNotification->insert($notification);
 			}
-			?><form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
-					Vous vendez : <br/>
+			?><form id="adminForm" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
+				<fieldset ><legend>Transaction Directe</legend>
+					<label for="desc">Vente</label>
 					<textarea name="desc"></textarea><br/>
-					A <br/>
-					Pseudo : <?php $util->getListRecepteur('');?> <br/>
-					Pour la somme de : <input name="prix" type="text"/> grain de poivre<br/>
-					<input type="submit"/>
+					<label for="listRecepteur">Cible</label>
+					<?php $util->getListRecepteur('');?> <br/>
+					<label for="prix">Prix</label>
+					<input name="prix" type="text"/><br/>
+				</fieldset>
+				<p>
+        			<input type="submit" name="submit" value ="créer" />
+    			</p>
 			</form><?php 		
 		}
 	}

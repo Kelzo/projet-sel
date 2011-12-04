@@ -56,11 +56,11 @@
 					<fieldset><legend>Créer une annonce </legend>
 							<label for="desc">Description</label>
 							<input name="desc"/>
-							<label for="">Type</label>
+							<label for="type">Type</label>
 							<input name="type"/>
-							<label for="">Etat</label>
+							<label for="etat">Etat</label>
 							<input name="etat"/>
-							<label for="">Date</label>
+							<label for="date">Date</label>
 							<input name="date"/>
 							<label for="recepteurId">Recepteur</label>
 							<?php $util->getListRecepteur('');?>
