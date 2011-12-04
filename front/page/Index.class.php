@@ -88,11 +88,16 @@
 		
 		function mireDeLogin(){
 			?>
-				Mire de login : <br/>
-				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-					pseudo : <input name="pseudo" type="text"/><br/>
-					password : <input name="password" type="password"/><br/>
-					<input type="submit"/>
+				
+				
+				<form id="mire" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+					<fieldset><legend>Mire de login :</legend>
+						<label for="pseudo">Pseudo</label>
+						<input name="pseudo" type="text"/><br/>
+						<label for="password">Password</label>
+						<input name="password" type="password"/><br/>
+						<input type="submit"/>
+					</fieldset>
 				</form>
 			<?php 
 		}
