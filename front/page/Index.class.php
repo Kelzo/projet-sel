@@ -91,7 +91,7 @@
 				Mire de login : <br/>
 				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
 					pseudo : <input name="pseudo" type="text"/><br/>
-					password : <input name="password" type="text"/><br/>
+					password : <input name="password" type="password"/><br/>
 					<input type="submit"/>
 				</form>
 			<?php 
