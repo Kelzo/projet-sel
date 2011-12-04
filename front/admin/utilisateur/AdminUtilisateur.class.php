@@ -95,7 +95,7 @@
 								<label for="photo">Photo</label>
 								<input name="photo"/>
 									
-							</div>
+							
 							
 						</fieldset>	
 						<p>

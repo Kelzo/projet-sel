@@ -64,7 +64,7 @@ width:700px;
 #adminForm label{
 	color:#0082c8;
 	display: block;
-	width: 30%;
+	width: 40%;
 	float: left;
 	padding-right: 1%;
 	text-align: right;
@@ -74,7 +74,7 @@ width:700px;
 #adminForm input, #adminForm select
 {
 	margin-left: 1%;
-	width: 60%;
+	width: 50%;
 	border:2px solid #f2f2f2;
 }
 
