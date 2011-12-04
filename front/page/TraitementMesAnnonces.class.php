@@ -35,7 +35,7 @@
 				$notif2->date=date('Y-m-d',time());
 				//on recupere l'annonce associé
 				$annonce = $qAnnonce->getById($_POST['annonceCibleId']);
-				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." est interessé par <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce ".$annonce->titre."</a>");
+				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." est interessé par <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce ".$annonce->titre."</a> et vous propose <a href='consulterAnnonce.php?annonce=".$_POST['annonceId']."'> l'annonce suivante</a> ainsi que ".$_POST['prix']." poivres.");
 				$notif2->etat="EN_ATTENTE";
 				$notif2->recepteurId=$annonce->utilisateurId;
 				$notif2->emetteurId=$user->id;
