@@ -1,9 +1,11 @@
 <?php
 	include 'manager/QueryNotification.class.php'; 
 	include 'manager/QueryTransactionDirect.class.php';
+	include 'manager/QueryTransaction.class.php';
 	include 'manager/QueryAnnonce.class.php';
 	include 'domaine/Notification.class.php';
 	include 'domaine/TransactionDirect.class.php';
+	include 'domaine/Transaction.class.php';
 	
 	class MesNotifications{
 		function __construct(){
@@ -43,8 +45,15 @@
 				//on valide la transaction
 				$vendeur = $qUser->getById($repNotification->recepteurId);
 				$acheteur = $qUser->getById($repNotification->emetteurId);
-				$transaction = new TransactionDirect();
-				$transaction = $qTransaction->getById($notification->transactionDirectId);
+				if($notification->transactionDirectId!=-1){
+					$qTransaction = new QueryTransactionDirect();
+					$transaction = new TransactionDirect();
+					$transaction = $qTransaction->getById($notification->transactionDirectId);
+				}else if($notification->annonceId!=-1){
+					$qTransaction = new QueryTransaction();
+					$transaction = new Transaction();
+					$transaction = $qTransaction->getById($notification->annonceId);
+				}
 				$vendeur->poivre+=$transaction->prix;
 				$acheteur->poivre-=$transaction->prix;
 				$qUser->update($acheteur);

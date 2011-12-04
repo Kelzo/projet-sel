@@ -2,10 +2,12 @@
 	include 'manager/QueryAnnonce.class.php'; 
 	include 'manager/QueryCommentaire.class.php'; 
 	include 'manager/QueryNotification.class.php';
+	include 'manager/QueryTransaction.class.php';
 	include 'manager/QueryTypeAnnonce.class.php'; 
 	include 'domaine/Commentaire.class.php';
 	include 'domaine/Notification.class.php';
 	include 'domaine/Annonce.class.php';
+	include 'domaine/Transaction.class.php';
 	include 'TraitementMesAnnonces.class.php';
 	
 	

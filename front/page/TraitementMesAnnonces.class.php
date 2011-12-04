@@ -8,6 +8,8 @@
 			$user = $qUser->getById($id);
 			$qCom = new QueryCommentaire();
 			$qNotif = new QueryNotification();
+			$qTransaction = new QueryTransaction();
+			
 			//on traite la suppression
 			if(ISSET($_POST['suppressionAnnonce'])){
 				$qAnnonce->delete($_POST['annonceId']);				
@@ -19,28 +21,37 @@
 				$notif1 = new Notification();
 				$notif1->date=date('Y-m-d',time());
 				//on recupere l'annonce associé
-				$annonce = $qAnnonce->getById($_POST['annonceId']);
+				$annonce = $qAnnonce->getById($_POST['annonceCibleId']);
 				$notif1->desc=mysql_escape_string("Vous etez interessé par <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce ".$annonce->titre."</a>");
 				$notif1->etat="REPONDU";
 				$notif1->recepteurId=$user->id;
 				$notif1->emetteurId=$user->id;
 				$notif1->type="REPONSE";
-				$notif1->annonceId=$_POST['annonceId'];
+				$notif1->annonceId=$_POST['annonceCibleId'];
 				$notif1->transactionDirectId=-1;
 				$qNotif->insert($notif1);
 				
 				$notif2 = new Notification();
 				$notif2->date=date('Y-m-d',time());
 				//on recupere l'annonce associé
-				$annonce = $qAnnonce->getById($_POST['annonceId']);
+				$annonce = $qAnnonce->getById($_POST['annonceCibleId']);
 				$notif2->desc=mysql_escape_string($user->nom." ".$user->prenom." est interessé par <a href=consulterAnnonce.php?annonce=".$annonce->id.">l'annonce ".$annonce->titre."</a>");
 				$notif2->etat="EN_ATTENTE";
 				$notif2->recepteurId=$annonce->utilisateurId;
 				$notif2->emetteurId=$user->id;
 				$notif2->type="REPONSE";
-				$notif2->annonceId=$_POST['annonceId'];
+				$notif2->annonceId=$_POST['annonceCibleId'];
 				$notif2->transactionDirectId=-1;
 				$qNotif->insert($notif2);
+				
+				//on crée la transaction
+				$transaction = new Transaction();
+				$transaction->annonceId=$_POST['annonceCibleId'];
+				$transaction->emetteurId=$user->id;
+				$transaction->recepteurId=$annonce->utilisateurId;
+				$transaction->prix=$_POST['prix'];
+				$transaction->annoncePropositionId=$_POST['annonceId'];
+				$qTransaction->insert($transaction);
 			}
 			
 			//on traite le formulaire commentaire

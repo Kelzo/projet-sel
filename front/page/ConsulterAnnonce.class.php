@@ -3,9 +3,11 @@
 	include 'manager/QueryCommentaire.class.php'; 
 	include 'manager/QueryNotification.class.php';
 	include 'manager/QueryTypeAnnonce.class.php'; 
+	include 'manager/QueryTransaction.class.php';
 	include 'domaine/Commentaire.class.php';
 	include 'domaine/Notification.class.php';
 	include 'domaine/Annonce.class.php';
+	include 'domaine/Transaction.class.php';
 	include 'TraitementMesAnnonces.class.php';
 	
 	
@@ -60,9 +62,9 @@
 				?>
 					<br/>Cette annonce vous interesse? Proposez quelque chose en echange!!!
 					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>?annonce=<?php echo $_GET['annonce']?>" method="POST">
-						<input name="annonceId" type="hidden" value="<?php echo $blop->id; ?>"/>
+						<input name="annonceCibleId" type="hidden" value="<?php echo $blop->id; ?>"/>
 						Vos annonces : <?php $util->getListeVosAnnonces($user->id);?>
-						Poivre : <input name="poivre"/>
+						Poivre : <input name="prix"/>
 						<input name="reponse" type="submit"/>
 					</form>				
 				<?php
