@@ -32,6 +32,7 @@
 <div id="admin">
  <div class="menu">
 	<a href="index.php?pageAdmin=annonce">Annonce</a>
+	<a href="index.php?pageAdmin=validationAnnonce">Validation</a>
 	<a href="index.php?pageAdmin=niveau">Niveau</a>
 	<a href="index.php?pageAdmin=typeAnnonce">Types Annonce</a>
 	<a href="index.php?pageAdmin=commentaire">Commentaire</a>
@@ -40,7 +41,6 @@
 	<a href="index.php?pageAdmin=transactionDirect">Transaction</a>
 	<a href="index.php?pageAdmin=notification">Notification</a>
 	<a href="../../home.php">Acces Front</a>
-	<a href="index.php?pageAdmin=validationAnnonce">Validation des annonces</a>
 	<a href="index.php?pageAdmin=deco">Log out</a>
  </div>
 	<?php
