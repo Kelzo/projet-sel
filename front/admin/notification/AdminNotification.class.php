@@ -25,6 +25,7 @@
 						<td>Emetteur</td>
 						<td>Annonce</td>
 						<td>Transaction Direct</td>
+						<td>Poivre</td>
 					</tr>
 			<?php 
 			while($blop=mysql_fetch_object($resultat)){
@@ -39,6 +40,7 @@
 						<td><?php $util->getListEmetteur($blop->emetteurId);?></td>
 						<td><?php $util->getListAnnonce($blop->annonceId);?></td>
 						<td><?php $util->getListTransactionDirect($blop->transactionDirectId);?></td>
+						<td><input name="poivre" value="<?php echo $blop->poivre; ?>"/></td>
 						<td><input value="E" type="submit"/></td>				
 					</form>
 					<form method="POST" action="notification/supprimerNotification.php">
@@ -56,12 +58,14 @@
 					<fieldset><legend>Créer une annonce </legend>
 							<label for="desc">Description</label>
 							<input name="desc"/>
-							<label for="">Type</label>
+							<label for="type">Type</label>
 							<input name="type"/>
-							<label for="">Etat</label>
+							<label for="etat">Etat</label>
 							<input name="etat"/>
-							<label for="">Date</label>
+							<label for="date">Date</label>
 							<input name="date"/>
+							<label for="poivre">Poivre</label>
+							<input name="poivre"/>
 							<label for="recepteurId">Recepteur</label>
 							<?php $util->getListRecepteur('');?>
 							<label for="emetteurId">Emetteur</label>
