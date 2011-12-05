@@ -15,24 +15,85 @@ text-align: right;
 letter-spacing: 1px;
 }
 
+/* HOME DECONNECTE */
+
+#index, .wrapp{
+border-radius: 10px 10px 10px 10px;
+border:3px solid #4a6f7a;
+margin-bottom: 10px;
+margin-top: 10px;
+padding:10px;
+}
+
+.wrapp{
+padding: 8px 8px 8px 32px;
+}
+
+#banniere{
+background:#4a6f7a;
+border-radius: 10px 10px 10px 10px;
+color: white;
+font-size: 50px;
+padding: 18px;
+text-align: center;
+margin-top:8px;
+}
+
+/* Bouttons homepage deconecté*/
+
+#listBoutton{
+width:400px;
+margin:0 auto;
+margin-top:15px;
+margin-bottom:15px;
+}
+
+button.boutonHomeDeco{
+border-radius: 10px 10px 10px 10px;
+background:transparent;
+border:3px solid #0082c8;
+color: #0082c8;
+padding:11px;
+margin-left:30px;
+cursor:pointer;
+}
+
+button.boutonHomeDeco:hover{
+color:#ffffff;
+border:3px solid #00d2b8;
+background:#00d2b8;
+}
+
 /* MIRE DE LOGIN */
 #mire{
-width:250px;
+width:306px;
 margin-bottom:30px;
+margin-left:100px;
+}
+
+fieldset{
+border-radius: 10px 10px 10px 10px;
+border:3px solid #0067CF;
+}
+
+fieldset legend{
+color:#0067CF;
 }
 
 /*ZONE DE CONSEIL*/
-#conseil
-{
-color:white;
-background-color:#0067CF;
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius: 10px;
+#conseil{
+background-color: #0067CF;
+border-radius: 10px 10px 10px 10px;
+color: white;
+float: right;
+margin-right: 83px;
+margin-top: -22px;
+width: 400px;
 }
 
 p.conseil{
-	padding:5px;
+	padding:17px;
+	margin:0px;
 }
 
 /* PARTIE ADMIN */
@@ -139,6 +200,7 @@ width:1000px;
 height:39px;
 padding:0;
 background:url("img/background_Menu.png");
+border-radius: 10px 10px 10px 10px;
 }
 
 .menuP ul{
@@ -153,7 +215,7 @@ list-style-type:none;
 
 .menuP ul li a{
 text-decoration:none;
-color:#afabab;
+color:#ffffff;
 display:block;
 height:39px;
 }
@@ -179,11 +241,10 @@ background:url("img/rollhover_Deco.png");
 
 
 
-
 /* MENU UTILISATEUR */
 
 .menuTop{
-height:132px;
+height:107px;
 }
 
 .menu_User{
@@ -262,6 +323,7 @@ font-size:12px;
 width:1000px;
 height:24px;
 background:url("img/footer.png");
+border-radius: 10px 10px 10px 10px;
 }
 
 #footer p {

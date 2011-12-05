@@ -6,13 +6,20 @@
 	
 	class Index{
 		function __construct(){
+		?>
+				<div id="banniere">Bienvenue au reseau SEL</div>
+					<div id="index">
+				<?php
 			//on creer les boutons de controle
-			?><button type="button" onclick="switcher('HOME')">HOME</button>
-			<button type="button" onclick="switcher('AGENDA')">AGENDA</button>
-			<button type="button" onclick="switcher('CONTACT')">CONTACT</button>
-			<?php 	
+				?>
+				<div id="listBoutton">
+					<button class="boutonHomeDeco" type="button" onclick="switcher('HOME')">HOME</button>
+					<button class="boutonHomeDeco" type="button" onclick="switcher('AGENDA')">AGENDA</button>
+					<button class="boutonHomeDeco" type="button" onclick="switcher('CONTACT')">CONTACT</button>
+				</div>
+				<?php 	
 			//puis le js correspondant
-			?>
+				?>
 			<script>
 				function switcher(string){
 					if(string=='HOME'){
@@ -89,7 +96,7 @@
 		
 		function mireDeLogin(){
 			?>
-				
+				<div>
 				<div id="conseil">
 					<p class="conseil">Connectez-vous pour accéder a l'espace membre et prendre part aux échanges.<br/>
 					   Si vous ne possèdez pas encore de compte, je vous invite a vous inscrire !<br/>
@@ -97,7 +104,7 @@
 					</p>
 				</div>
 				<form id="mire" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-					<fieldset><legend>Mire de login :</legend>
+					<fieldset><legend> Identification : </legend>
 						<label for="pseudo">Pseudo</label>
 						<input name="pseudo" type="text"/><br/>
 						<label for="password">Password</label>
@@ -105,6 +112,8 @@
 						<input type="submit"/>
 					</fieldset>
 				</form>
+				</div>
+			</div>
 			<?php 
 		}
 	}

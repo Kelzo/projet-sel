@@ -13,6 +13,7 @@
 					<li><a class="decoBouton" href="deco.php">Deconnection</a></li>
 				</ul>
 			</div>
+			<div class="wrapp">
 			<?php 
 		}	
 	}
