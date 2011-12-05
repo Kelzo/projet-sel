@@ -12,7 +12,20 @@
 			
 			//on traite la suppression
 			if(ISSET($_POST['suppressionAnnonce'])){
-				$qAnnonce->delete($_POST['annonceId']);				
+				$qAnnonce->delete($_POST['annonceId']);
+				//et on supprime tous les elements si rapportant
+				$listeCom = $qCom->getByAnnonceId($_POST['annonceId']);
+				while($blop=mysql_fetch_objet($listeCom)){
+					$qCom->delete($blop->id);
+				}
+				$listeNotif = $qNotif->getByAnnonceId($_POST['annonceId']);
+				while($blop=mysql_fetch_objet($listeNotif)){
+					$qNotif->delete($blop->id);
+				}
+				$listeTransaction = $qTransaction->getByAnnonceId($_POST['annonceId']);
+				while($blop=mysql_fetch_objet($listeTransaction)){
+					$qTransaction->delete($blop->id);
+				}				
 			}
 			
 			//on traite la reponse

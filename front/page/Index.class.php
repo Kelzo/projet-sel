@@ -56,6 +56,7 @@
 						$i++;
 						$user=$blop;	
 					}
+
 					if($i==0){
 						//login echoue
 						echo "Echec du login<br/>";
