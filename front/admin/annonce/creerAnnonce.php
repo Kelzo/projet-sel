@@ -4,7 +4,7 @@
 	include '../../../Connection.class.php';
 	//on recupere les donnée du formulaire et on le chargfe dans l'objet
 	$annonce=new Annonce();
-	
+
 	//penser a proteger les champs des caracteres speciaux
 	$annonce->typeAnnonceId = mysql_escape_string($_POST['typeAnnonceId']."");
 	$annonce->utilisateurId = mysql_escape_string($_POST['utilisateurId']."");
