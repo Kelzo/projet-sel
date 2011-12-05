@@ -21,6 +21,20 @@ width:250px;
 margin-bottom:30px;
 }
 
+/*ZONE DE CONSEIL*/
+#conseil
+{
+color:white;
+background-color:#0067CF;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+
+p.conseil{
+	padding:5px;
+}
+
 /* PARTIE ADMIN */
 
 
