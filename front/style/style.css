@@ -283,7 +283,7 @@ margin-right: 50px;
 margin-top: -52px;
 }
 
-.rechercher .soumettre{
+.rechercher #soumettre{
 font-size: 0;
 height: 22px;
 margin-left: 160px;

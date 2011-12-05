@@ -4,7 +4,7 @@
 		?>
 			<div class="rechercher">
 				<form>
-					<input class="soumettre" name="soumettre" type="submit"/>
+					<input id="soumettre" name="soumettre" type="submit"/>
 					<p>
 						<input name="rechercher" type="text"/>
 					</p>
