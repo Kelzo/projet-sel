@@ -43,7 +43,10 @@
 							<label for="coutPoivre">Cout Poivre</label>
 							<input name="coutPoivre"/>
 							<label for="permanente">Permanente</label>
-							<input name="permanente"/>		
+							<select name="permanente">
+								<option value="0">Non</option>
+								<option value="1">Oui</option>
+							</select>
 					</fieldset>		
 						<p>
         				<input type="submit" name="submit" value ="créer" />
