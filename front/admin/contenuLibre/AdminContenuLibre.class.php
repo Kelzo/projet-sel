@@ -43,7 +43,7 @@
 							<label for="idFonctionnel">Id Fonctionnel</label>
 							<?php $util->getListIdFContenu(''); ?>	
 							<label for="texte">Texte</label>
-							<textarea name="texte"/></textarea> <br/>
+							<input type="text" name="texte"/></input>
 					</fieldset>
 					<p>
         			<input type="submit" name="submit" value ="créer" />

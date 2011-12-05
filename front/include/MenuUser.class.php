@@ -2,13 +2,14 @@
 	class MenuUser{
 		function __construct(){
 			?>
-			<div class="menu_User">
-				<ul>
-					<li><a href="mesNotifications.php">Mes Notifications</a></li>
-					<li><a href="monCompte.php">Mon Compte</a></li>
-					<li><a href="mesAnnonces.php">Mes Annonces</a></li>
-				</ul>
-			</div>
+			<div class="menuTop">
+				<div class="menu_User"> <!--Ce div se ferme dans la fin du Search-->
+					<ul>
+						<li><a href="mesNotifications.php">Mes Notifications</a></li>
+						<li><a href="monCompte.php">Mon Compte</a></li>
+						<li><a href="mesAnnonces.php">Mes Annonces</a></li>
+					</ul>
+				</div>
 			<?php 
 		}	
 	}

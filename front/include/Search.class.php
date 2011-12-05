@@ -11,6 +11,7 @@
 					<a href="#">Recherche avancée</a>
 				</form>
 			</div>
+		</div>
 <?php		
 		}
 	}
