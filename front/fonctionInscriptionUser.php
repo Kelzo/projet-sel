@@ -6,9 +6,6 @@
 		session_start();
 		$_SESSION['message']=$P_Message;
 	}
-	
-	function transmetValeur($LabelChamp,$ValeurChamp)
-		{$_SESSION[$LabelChamp]=$ValeurChamp;}
 		
 	//Fonction qui vérifie qu'il n'y a pas de doublon sur le login
 	// function verifLogin
