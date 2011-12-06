@@ -28,11 +28,11 @@
 		$qUtilisateur->insert($utilisateur);
 							
 		transmetMessage("Votre inscription a été enregistrée. Elle sera validée par l'administrateur. <br />En attendant la validation, vous bénéficiez d'un compte Invité.<br />Pour votre fidélité, vous gagnez 500 points de poivres.<br /> Cliquez ici pour vous <a href='index.php'>connecter!</a>");
-		header("location:../../inscriptionUtilisateur.php");
+		header("location:../../inscriptionUser.php");
 	}
 	else
 	{
 		transmetMessage($messageErreur);
-		header("location:../../inscriptionUtilisateur.php");
+		header("location:../../inscriptionUser.php");
 	}
 ?>

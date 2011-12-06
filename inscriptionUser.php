@@ -14,6 +14,8 @@
 			<input name="nomUtilisateur"/><br />
 			<label for="prenomUtilisateur">Prénom</label>
 			<input name="prenomUtilisateur"/><br />
+			<label for="pseudoUtilisateur">Pseudo</label>
+			<input name="pseudoUtilisateur"/><br />
 			<label for="passwordUtilisateur">Password</label>
 			<input name="passwordUtilisateur"/><br />
 			<label for="emailUtilisateur">Email</label>
