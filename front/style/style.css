@@ -316,12 +316,12 @@ font-size:12px;
 
  
 a
-{text-decoration:none;
- color:white}
+{color:white}
 
 
 a:hover
-{color:#00d2b8;}
+{color:#00d2b8;
+ text-decoration:none;}
 
 /* PIED DE PAGE */
 
