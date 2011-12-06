@@ -99,7 +99,7 @@
 				<div>
 				<div id="conseil">
 					<p class="conseil">Connectez-vous pour accéder a l'espace membre et prendre part aux échanges.<br/>
-					   Si vous ne possèdez pas encore de compte, je vous invite a vous inscrire !<br/>
+					   Si vous ne possèdez pas encore de compte, je vous invite a vous inscrire !<a href="inscriptionUser.php">Inscription</a><br/>
 					   Vous pouvez consulter nos rendez-vous dans le calendrier du site.
 					</p>
 				</div>
