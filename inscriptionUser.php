@@ -1,10 +1,52 @@
 <?php
 	include("front/include/Header.class.php");
 	include("front/include/Footer.class.php");
-	//test commit
+	include 'manager/QueryContenuLibre.class.php';
+	include 'domaine/ContenuLibre.class.php';
+	include 'front/page/Agenda.class.php';
+	include 'front/page/Contact.class.php';
+	
 	new Header();
 ?>
 	<div id="banniere">Bienvenue au reseau SEL</div>
+		<div id="index">
+
+		<?php //on creer les boutons de controle ?>
+		<div id="listBoutton">
+			<button class="boutonHomeDeco" type="button" onclick="switcher('HOME')">HOME</button>
+			<button class="boutonHomeDeco" type="button" onclick="switcher('AGENDA')">AGENDA</button>
+			<button class="boutonHomeDeco" type="button" onclick="switcher('CONTACT')">CONTACT</button>
+		</div>
+		
+		<?php //puis le js correspondant ?>
+		<script>
+			function switcher(string){
+				if(string=='HOME'){
+					$("#CONTENU_CONTACT").hide();
+					$("#CONTENU_AGENDA").hide();
+					$("#CONTENU_HOME").show(200);						
+				}if(string=='AGENDA'){
+					$("#CONTENU_CONTACT").hide();
+					$("#CONTENU_HOME").hide();
+					$("#CONTENU_AGENDA").show(200);
+				}if(string=='CONTACT'){
+					$("#CONTENU_HOME").hide();
+					$("#CONTENU_AGENDA").hide();
+					$("#CONTENU_CONTACT").show(200);
+				}
+				}
+		</script>
+		
+		<?php 
+			$qContenuLibre=new QueryContenuLibre();
+			//on recupere les contenu libre grace a l'idFonctionnel
+			$home = $qContenuLibre->getByIdFonctionnel(CONTENU_HOME);
+			while ($blop=mysql_fetch_object($home)){
+				echo "<div id=".CONTENU_HOME.">".$blop->texte."</div>"; }
+			
+			new Contact('hidden');
+			new Agenda('hidden');
+		?>
 	
 	<!-- FORMULAIRE INSCRIPTION -->
 	<form method="POST" action="front/page/InscriptionUser.php">
