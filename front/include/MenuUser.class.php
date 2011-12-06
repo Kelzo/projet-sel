@@ -8,6 +8,7 @@
 						<li><a href="mesNotifications.php">Mes Notifications</a></li>
 						<li><a href="monCompte.php">Mon Compte</a></li>
 						<li><a href="mesAnnonces.php">Mes Annonces</a></li>
+						<li><a href="monHistorique.php">Mon Historique</a><li>
 					</ul>
 				</div>
 			<?php 
