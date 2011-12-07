@@ -80,7 +80,7 @@ fieldset legend{
 color:#0067CF;
 }
 
-/*ZONE DE CONSEIL*/
+/*ZONE DE CONSEIL PAGE ACCUEIL*/
 #conseil{
 background-color: #0067CF;
 border-radius: 10px 10px 10px 10px;
@@ -95,6 +95,16 @@ p.conseil{
 	padding:17px;
 	margin:0px;
 }
+
+/*ZONE DE CONSEIL INSTRUCTION*/
+#conseilInstruction{
+background-color: #0067CF;
+border-radius: 10px 10px 10px 10px;
+color: white;
+margin-top: 10px;
+margin-bottom:10px;
+padding: 5px 5px 5px 5px}
+
 
 /* PARTIE ADMIN */
 
