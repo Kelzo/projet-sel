@@ -1,7 +1,7 @@
 <?php
 	include("front/include/Header.class.php");
 	include("front/page/FrontAnnonce.class.php");
-	include 'front/include/Side.claas.php';
+	include 'front/include/Side.class.php';
 	include 'front/include/Widget.class.php';
 	include("front/include/Footer.class.php");
 

@@ -40,6 +40,7 @@
 	<a href="index.php?pageAdmin=contenuLibre">Contenu</a>
 	<a href="index.php?pageAdmin=transactionDirect">Transaction</a>
 	<a href="index.php?pageAdmin=notification">Notification</a>
+	<a href="index.php?pageAdmin=agenda">Agenda</a>
 	<a href="../../home.php">Acces Front</a>
 	<a href="index.php?pageAdmin=deco">Log out</a>
  </div>
@@ -86,7 +87,12 @@
 			}else if($_GET['pageAdmin']=="validationAnnonce"){
 				include 'validation/AdminValidationAnnonce.class.php';
 				new AdminValidationAnnonce();
-			}else if($_GET['pageAdmin']=="deco"){
+			}
+			else if($_GET['pageAdmin']=="agenda"){
+				include 'agenda/AdminAgenda.class.php';
+				new AdminAgenda();
+			}
+			else if($_GET['pageAdmin']=="deco"){
 				session_unset();
 			}
 		}
