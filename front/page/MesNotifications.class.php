@@ -59,9 +59,9 @@
 					$acheteur->poivre+=$transaction->prix;
 					
 					//on supprime l'annonce si la transaction est non permanente
-					$annonce = $qAnnonce->getById($notification->annonceId); 
-					if($annonce->permanente==0){
-						$qAnnonce->delete($annonce->id);
+						$annonce = $qAnnonce->getById($notification->annonceId); 
+						$annonce->annonceValide = 2;
+						$qAnnonce->update($annonce);
 						//et on supprime tous les elements si rapportant
 						$listeCom = $qCom->getByAnnonceId($annonce->id);
 						while($blop=mysql_fetch_objet($listeCom)){
@@ -75,7 +75,6 @@
 						while($blop=mysql_fetch_objet($listeTransaction)){
 							$qTransaction->delete($blop->id);
 						}	
-					}
 				}
 				
 				

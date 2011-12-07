@@ -1,6 +1,7 @@
 <?php
 	include 'manager/QueryContenuLibre.class.php';
 	include 'domaine/ContenuLibre.class.php';
+	include 'manager/QueryAgenda.class.php';
 	include 'front/page/Agenda.class.php';
 	include 'front/page/Contact.class.php';
 	
