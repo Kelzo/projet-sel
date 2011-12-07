@@ -315,7 +315,13 @@ font-size:12px;
 }
 
  
+a
+{color:white}
 
+
+a:hover
+{color:#00d2b8;
+ text-decoration:none;}
 
 /* PIED DE PAGE */
 
