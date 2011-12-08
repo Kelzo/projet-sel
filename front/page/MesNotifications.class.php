@@ -122,7 +122,8 @@
 				}
 				echo "Par : ".$util->getNomPrenomById($blop->emetteurId)."<br/>".$blop->desc."<br/>";
 				echo "Concernant : ".$concernant->desc."<br/>";
-				echo "Pour : ".$concernant->prix." grains de poivres<br/>";
+				if($blop->transactionDirectId!=-1){
+				echo "Pour : ".$concernant->prix." grains de poivres<br/>";}
 				echo "Daté du ".date('d-m-Y',strtotime($blop->date))."<br/>";
 				
 				if($blop->etat!="REPONDU"){
