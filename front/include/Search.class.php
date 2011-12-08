@@ -13,6 +13,10 @@
 			</div>
 		</div>
 <?php		
+
+			if(ISSET($_POST['rechercher'])){
+					
+			}
 		}
 	}
 ?>

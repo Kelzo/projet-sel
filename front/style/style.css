@@ -119,6 +119,49 @@ p.conseil{
 	margin:0px;
 }
 
+/* HOMEPAGE */
+
+#lastAnnonce{
+min-height:120px;
+}
+
+#homepage{
+margin-bottom:21px;
+}
+
+#homepage ul{
+width:450px;
+margin:0;
+padding:0;
+border-radius: 10px 10px 10px 10px;
+border:3px solid  #0067CF;;
+}
+
+#homepage ul#need{
+ margin-left: 480px;
+ margin-top: -107px;
+}
+
+
+#homepage ul li{
+list-style-type:none;
+margin:10px;
+}
+
+#homepage ul li span{
+font-weight:bold;
+color:#0067CF;
+}
+
+#homepage ul li a{
+color:#00d2b8;
+text-decoration:none;
+}
+
+#homepage ul li a:hover{
+text-decoration:underline;
+}
+
 /* PARTIE ADMIN */
 
 
