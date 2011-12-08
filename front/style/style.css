@@ -139,8 +139,10 @@ color:#0067CF;
 }
 
 #homepage ul#need{
-margin-left: 517px;
-margin-top: -134px;
+ padding:15px;
+}
+#homepage ul#service{
+padding:15px;
 }
 
 
