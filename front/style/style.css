@@ -23,7 +23,7 @@ letter-spacing: 1px;
 border-radius: 10px;
 border:3px solid #4a6f7a;
 margin-bottom: 10px;
-margin-top: 10px;
+margin-top: 40px;
 padding:10px;
 }
 
@@ -51,7 +51,7 @@ margin-top:15px;
 margin-bottom:15px;
 }
 
-button.boutonHomeDeco{
+.boutonHomeDeco{
 -webkit-border-radius: 10px;
 -moz-border-radius: 10px;
 border-radius: 10px;
@@ -63,7 +63,7 @@ margin-left:30px;
 cursor:pointer;
 }
 
-button.boutonHomeDeco:hover{
+.boutonHomeDeco:hover{
 color:#ffffff;
 border:3px solid #00d2b8;
 background:#00d2b8;
@@ -87,7 +87,21 @@ fieldset legend{
 color:#0067CF;
 }
 
-/*ZONE DE CONSEIL PAGE ACCUEIL*/
+/*ZONE DE CONSEIL*/
+
+
+
+/*ZONE DE CONSEIL INSTRUCTION*/
+
+#conseilInstruction{
+background-color: #0067CF;
+border-radius: 10px 10px 10px 10px;
+color: white;
+margin-top: 10px;
+margin-bottom:10px;
+padding: 5px 5px 5px 5px}
+ 
+
 #conseil{
 background-color: #0067CF;
 -webkit-border-radius: 10px;
@@ -104,16 +118,6 @@ p.conseil{
 	padding:17px;
 	margin:0px;
 }
-
-/*ZONE DE CONSEIL INSTRUCTION*/
-#conseilInstruction{
-background-color: #0067CF;
-border-radius: 10px 10px 10px 10px;
-color: white;
-margin-top: 10px;
-margin-bottom:10px;
-padding: 5px 5px 5px 5px}
-
 
 /* PARTIE ADMIN */
 
@@ -349,9 +353,7 @@ color:#2f2f2f;
 font-size:12px;
 }
 
-h3 a{
-color:#0067CF}
-
+ 
 a
 {color:white}
 

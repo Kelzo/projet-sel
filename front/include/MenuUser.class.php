@@ -12,12 +12,10 @@
 			</div>
 			<div class="menuTop">
 					<div class="menu_User">
-					<ul>
-						<li><a href="mesNotifications.php">Mes Notifications</a></li>
-						<li><a href="monCompte.php">Mon Compte</a></li>
-						<li><a href="mesAnnonces.php">Mes Annonces</a></li>
-						<li><a href="monHistorique.php">Mon Historique</a><li>
-					</ul>
+					<a  class="boutonHomeDeco"  href="mesNotifications.php">Mes Notifications</a>
+					<a  class="boutonHomeDeco"  href="monCompte.php">Mon Compte</a>
+					<a  class="boutonHomeDeco"  href="mesAnnonces.php">Mes Annonces</a>
+					<a  class="boutonHomeDeco"  href="monHistorique.php">Mon Historique</a>
 				</div>
 			<?php 
 		}	
