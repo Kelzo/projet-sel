@@ -52,14 +52,16 @@
 				}
 				//formulaire de commentaire
 				?>
+				<?php if($blop->annonceValide <= 1){ ?>
 					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>?annonce=<?php echo $_GET['annonce']?>" method="POST">
 						<input name="annonceId" type="hidden" value="<?php echo $blop->id; ?>"/>
 						Commentaire : <input name="texte"/>
 						<input name="commentaire" type="submit"/>
 					</form>
 				<?php
+				}
 				//formulaire de reponse uniquement pour les autres
-				if($blop->utilisateurId!=$user->id){}
+				if($blop->utilisateurId!=$user->id){
 				?>
 					<br/>Cette annonce vous interesse? Proposez quelque chose en echange!!!
 					<form action="<?php echo $_SERVER["PHP_SELF"]; ?>?annonce=<?php echo $_GET['annonce']?>" method="POST">
@@ -69,6 +71,7 @@
 						<input name="reponse" type="submit"/>
 					</form>				
 				<?php
+				 }
 			}else{
 				?>Cette annonce n'a pas encore été validé par notre équipe<?php 
 			} 

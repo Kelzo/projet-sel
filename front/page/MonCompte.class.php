@@ -1,9 +1,15 @@
 <?php
 	class MonCompte{
 		function __construct(){
+		
+				$qUtilisateur = new QueryUtilisateur();
+				$user = $qUtilisateur->getById($_SESSION['id']);
 	
 			if(ISSET($_POST['nom'])){
-				//on charge l'objet
+				
+				$qUtilisateur = new QueryUtilisateur();
+				$user = $qUtilisateur->getById($_SESSION['id']);
+				$util=new Util();
 				$utilisateur = $user;
 				$utilisateur->nom = mysql_escape_string($_POST['nom']."");
 				$utilisateur->prenom = mysql_escape_string($_POST['prenom']."");
