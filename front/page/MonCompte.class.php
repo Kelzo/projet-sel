@@ -1,9 +1,7 @@
 <?php
 	class MonCompte{
 		function __construct(){
-			$qUtilisateur = new QueryUtilisateur();
-			$user = $qUtilisateur->getById($_SESSION['id']);
-			$util=new Util();
+	
 			if(ISSET($_POST['nom'])){
 				//on charge l'objet
 				$utilisateur = $user;
