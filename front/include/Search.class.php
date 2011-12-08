@@ -3,20 +3,16 @@
 		function __construct(){
 		?>
 			<div class="rechercher">
-				<form>
-					<input id="soumettre" name="soumettre" type="submit"/>
+				<form method="POST" action="resultSearch.php">
+					<input id="soumettre" name="rechercher" type="submit"/>
 					<p>
-						<input name="rechercher" type="text"/>
+						<input name="champ" type="text"/>
 					</p>
-					<a href="#">Recherche avancée</a>
+					<a href="resultSearch.php">Recherche avancée</a>
 				</form>
 			</div>
 		</div>
-<?php		
-
-			if(ISSET($_POST['rechercher'])){
-					
-			}
+<?php	
 		}
 	}
 ?>
