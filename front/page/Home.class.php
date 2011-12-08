@@ -14,8 +14,7 @@
 			$listService = $qAnnonce->getService();
 			?>
 			
-			<table><tr><td>
-			<ul id="service">
+				<ul id="service">
 				<h2>Proposition(s) :</h2>
 			<?php
 				$o=0;
@@ -33,7 +32,7 @@
 				}
 				?>
 				</ul>				
-			</td><td>
+			
 				<ul id="need">
 				<h2>Demande(s) :</h2>
 			<?php
@@ -52,8 +51,7 @@
 				}
 				?>
 				</ul>
-				
-			</td></tr></table>
+			
 				<?php
 				new Conseil();
 				?>

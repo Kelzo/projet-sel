@@ -140,9 +140,11 @@ color:#0067CF;
 
 #homepage ul#need{
  padding:15px;
+ float:right;
 }
 #homepage ul#service{
 padding:15px;
+float:left;
 }
 
 
