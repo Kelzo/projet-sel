@@ -49,8 +49,9 @@
 		?>
 	
 	<!-- FORMULAIRE INSCRIPTION -->
+	<br />
 	<form method="POST" action="front/page/InscriptionUser.php">
-	<fieldset>
+	<fieldset style="width:660px;">
 		<legend>Inscription</legend>			
 			<label for="nomUtilisateur">Nom</label>
 			<input name="nomUtilisateur"/><br />
@@ -78,7 +79,7 @@
 					{echo $_SESSION['message']."<br />";}
 			?>
 			
-		<p><input type="submit" name="submit" value ="créer" /></p>	
+		<p><input type="submit" name="submit" value ="Valider" /></p>	
 	</fieldset>				
 </form>
 

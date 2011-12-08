@@ -18,20 +18,23 @@ letter-spacing: 1px;
 /* HOME DECONNECTE */
 
 #index, .wrapp{
-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 border:3px solid #4a6f7a;
 margin-bottom: 10px;
-margin-top: 10px;
+margin-top: 30px;
 padding:10px;
 }
 
 .wrapp{
-padding: 8px 8px 8px 32px;
 }
 
 #banniere{
 background:#4a6f7a;
-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 color: white;
 font-size: 50px;
 padding: 18px;
@@ -48,8 +51,10 @@ margin-top:15px;
 margin-bottom:15px;
 }
 
-button.boutonHomeDeco{
-border-radius: 10px 10px 10px 10px;
+.boutonHomeDeco{
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 background:transparent;
 border:3px solid #0082c8;
 color: #0082c8;
@@ -58,7 +63,7 @@ margin-left:30px;
 cursor:pointer;
 }
 
-button.boutonHomeDeco:hover{
+.boutonHomeDeco:hover{
 color:#ffffff;
 border:3px solid #00d2b8;
 background:#00d2b8;
@@ -72,7 +77,9 @@ margin-left:100px;
 }
 
 fieldset{
-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 border:3px solid #0067CF;
 }
 
@@ -81,9 +88,25 @@ color:#0067CF;
 }
 
 /*ZONE DE CONSEIL*/
-#conseil{
+
+
+
+/*ZONE DE CONSEIL INSTRUCTION*/
+
+#conseilInstruction{
 background-color: #0067CF;
 border-radius: 10px 10px 10px 10px;
+color: white;
+margin-top: 10px;
+margin-bottom:10px;
+padding: 5px 5px 5px 5px}
+ 
+
+#conseil{
+background-color: #0067CF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 color: white;
 float: right;
 margin-right: 83px;
@@ -200,7 +223,9 @@ width:1000px;
 height:39px;
 padding:0;
 background:url("img/background_Menu.png");
-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 }
 
 .menuP ul{
@@ -218,6 +243,20 @@ text-decoration:none;
 color:#ffffff;
 display:block;
 height:39px;
+}
+
+#pseudo_area{
+	height:30px;
+	color:white;
+	padding:10px;
+	background-color:#0067CF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	font-family:Viga;
+	}
+span.pseudo{
+	font-size:30px;
 }
 
 .menuP ul li a.menuP_Links{
@@ -314,14 +353,21 @@ color:#2f2f2f;
 font-size:12px;
 }
 
- 
-a
-{color:white}
+h3 a
+{color:#0067CF;
+text-decoration:none;}
 
+h3 a:hover
+{color:#00d2b8;}
 
-a:hover
-{color:#00d2b8;
- text-decoration:none;}
+a{
+color:white;
+text-decoration:none;
+}
+
+a:hover{
+color:#00d2b8;
+}
 
 /* PIED DE PAGE */
 
@@ -329,7 +375,9 @@ a:hover
 width:1000px;
 height:24px;
 background:url("img/footer.png");
-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 }
 
 #footer p {

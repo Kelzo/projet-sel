@@ -23,6 +23,7 @@
 				
 				<script type="text/javascript" src="front/script/jquery-1.6.2.min.js"></script>
 				<script type="text/javascript" src="front/script/jquery-ui-1.8.16.custom.min.js"></script>
+				<link href='http://fonts.googleapis.com/css?family=Viga' rel='stylesheet' type='text/css'>
 				
 				<title>Projet SEL</title>
 				

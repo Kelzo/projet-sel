@@ -1,8 +1,11 @@
 <?php
 	class MenuP{
 		function __construct(){
-			?>	
+	
+			?>
+		
 			<div class="menuP">
+					
 				<ul>
 					<li><a class="menuP_Links" href="home.php">Accueil</a></li>
 					<li><a class="menuP_Links" href="transactionDirect.php">Transaction Direct</a></li>
