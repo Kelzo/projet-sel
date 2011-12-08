@@ -13,9 +13,9 @@
 			//on recupere les propositions
 			$listService = $qAnnonce->getService();
 			?>
-			<div id="lastAnnonce">
+			
 				<ul id="service">
-				Proposition :
+				<h2>Proposition(s) :</h2>
 			<?php
 				$o=0;
 				while($blop=mysql_fetch_object($listService)){
@@ -26,23 +26,32 @@
 					$o++;
 				}
 				if($o==0){
-					//afficé a null
+				?>
+					<p>Il n'y aucune proposition</p>
+					<?php
 				}
 				?>
 				</ul>				
 			
 				<ul id="need">
-				Demande :
+				<h2>Demande(s) :</h2>
 			<?php
+				$o=0;
 				while($blop=mysql_fetch_object($listNeed)){
 				$annonceId=$blop->id;
 				?>
 					<li><a class="homepageLink" href="consulterAnnonce.php?annonce=<?php echo $annonceId;?>">Consulter</a><?php echo "<span>  ".$blop->titre."</span>  /  ".$blop->desc;?></li>
 					<?php
+					$o++;
+				}
+				if($o==0){
+				?>
+					<p>Il n'y aucune demande</p>
+					<?php
 				}
 				?>
 				</ul>
-				</div>
+			
 				<?php
 				new Conseil();
 				?>

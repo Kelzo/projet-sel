@@ -97,7 +97,7 @@ color:#0067CF;
 background-color: #0067CF;
 border-radius: 10px 10px 10px 10px;
 color: white;
-margin-top: 10px;
+margin-top: 59px;
 margin-bottom:10px;
 padding: 5px 5px 5px 5px}
  
@@ -121,10 +121,6 @@ p.conseil{
 
 /* HOMEPAGE */
 
-#lastAnnonce{
-min-height:120px;
-}
-
 #homepage{
 margin-bottom:21px;
 }
@@ -134,12 +130,17 @@ width:450px;
 margin:0;
 padding:0;
 border-radius: 10px 10px 10px 10px;
-border:3px solid  #0067CF;;
+border:3px solid  #0067CF;
+}
+
+#homepage ul h2{
+margin-left:12px;
+color:#0067CF;
 }
 
 #homepage ul#need{
- margin-left: 480px;
- margin-top: -107px;
+margin-left: 517px;
+margin-top: -134px;
 }
 
 
@@ -330,27 +331,11 @@ height:107px;
 }
 
 .menu_User{
-padding-left: 53px;
 padding-top: 43px;
 }
 
-.menu_User ul{
+.menu_User a{
 margin:0;
-padding:0;
-width:508px;
-border-bottom:2px solid #37535b;
-}
-
-.menu_User ul li{
-list-style-type:none;
-display:inline;
-margin-left:43px;
-}
-
-.menu_User ul li a{
-font-size:16px;
-color:#2f2f2f;
-text-decoration:none;
 }
 
 
@@ -362,7 +347,7 @@ text-decoration:none;
 .rechercher {
 float: right;
 margin-right: 50px;
-margin-top: -52px;
+margin-top: -27px;
 }
 
 .rechercher #soumettre{

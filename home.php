@@ -14,6 +14,5 @@
 	new MenuUser();
 	new Search();
 	new Home();
-	new Conseil();
 	new Footer();	 		
 ?>
