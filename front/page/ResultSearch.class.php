@@ -49,10 +49,11 @@
 					
 				}else{
 					?>
-					<form method="POST" action="#">
-						<input name="rechercher" type="text"/>
-						<input id="soumettre" name="soumettre" type="submit" name="rechercherAdv"/>
-					</form>
+					Fonction non implementée
+<!--					<form method="POST" action="#">-->
+<!--						<input name="rechercher" type="text"/>-->
+<!--						<input id="soumettre" name="soumettre" type="submit" name="rechercherAdv"/>-->
+<!--					</form>-->
 					<?php 
 				}
 			}
