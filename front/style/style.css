@@ -353,12 +353,18 @@ color:#2f2f2f;
 font-size:12px;
 }
 
+h3 a
+{color:#0067CF;
+text-decoration:none;}
 
+h3 a:hover
+{color:#00d2b8;}
 
 a{
-color:#0067CF;
+color:white;
 text-decoration:none;
 }
+
 a:hover{
 color:#00d2b8;
 }
