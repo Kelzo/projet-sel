@@ -21,10 +21,11 @@
 			$qCom = new QueryCommentaire();
 
 			new TraitementMesAnnonces();
+			
 			//on recupere l'annonce
 			$blop = $qAnnonce->getById($_GET['annonce']);
 			if($blop->utilisateurId==$user->id || $blop->annonceValide==1){
-				echo "<h2><a href='consulterAnnonce.php?annonce=".$blop->id."'>".$blop->titre."</a></h2>".$blop->desc."<br/><br/><br/>";
+				echo "<h3><a href='consulterAnnonce.php?annonce=".$blop->id."'>".$blop->titre."</a></h3>".$blop->desc."<br/><br/><br/>";
 					//ajout de la suppression
 				if($blop->utilisateurId==$user->id){
 				?><form action="<?php echo $_SERVER["PHP_SELF"];?>?annonce=<?php echo $_GET['annonce']?>" method="POST">

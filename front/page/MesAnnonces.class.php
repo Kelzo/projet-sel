@@ -79,12 +79,19 @@
 				</form>
 			<?php 
 			
-			//liste de vos annonces
+			//Liste de vos annonces
 			$listeAnnonce = $qAnnonce->getByUserId($user->id);
+			?>
+			<fieldset><legend> Toutes mes annonces </legend>
+			<?php
 			while ($blop=mysql_fetch_object($listeAnnonce)){
-				echo "<h2><a href='consulterAnnonce.php?annonce=".$blop->id."'>".$blop->titre."</a></h2>";;				
+				echo "<h3><a href='consulterAnnonce.php?annonce=".$blop->id."'>".$blop->titre."</a></h3>";;				
 				?><hr/><?php 
-			}		
+			}
+			?>
+			</fieldset>
+			<br />
+			<?php
 		}
 	}
 ?>
