@@ -16,15 +16,23 @@
 					</tr>
 					<tr>
 						<td><li>Pour visualiser une annonce:</li></td>
-						<td>1) Pour une annonce spécifique: faites une recherche via la barre de recherche en haut</td>
+						<td>1) Pour une annonce spécifique: faire une recherche via la barre de recherche en haut</td>
 					</tr>
 					<tr>
 						<td></td>
-						<td>2) Ou cliquez sur une des annonces publiées sur la page d'Accueil</td>
+						<td>2) Ou cliquer sur une des annonces publiées sur la page d'Accueil</td>
 					</tr>
 					<tr>
 						<td><li>Pour modifier mes paramètres:</li></td>
 						<td>Cliquer sur l'onglet "<i>Mon Compte</i>"</td>
+					</tr>
+					<tr>
+						<td><li>Pour visualiser mes anciennes annonces:</li></td>
+						<td>Cliquer sur l'onglet "<i>Mon Historique</i>"</td>
+					</tr>
+					<tr>
+						<td><li>Pour visualiser les offres de mes annonces:</li></td>
+						<td>Cliquer sur l'onglet "<i>Mon Notificationss</i>"</td>
 					</tr>
 				</table></ul>
 
